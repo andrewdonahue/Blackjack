@@ -21,6 +21,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenfelt" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-GI-try">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-fX-3ch">
+                                <rect key="frame" x="190" y="618" width="185" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Stand">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wins: __ Losses: __" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-cL-D9f">
                                 <rect key="frame" x="75" y="27" width="238" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,7 +44,7 @@
                                 <color key="textColor" red="0.88303256034851074" green="0.9139973521232605" blue="0.49685764312744141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10C" translatesAutoresizingMaskIntoConstraints="NO" id="kBk-xE-aaF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8H" translatesAutoresizingMaskIntoConstraints="NO" id="kBk-xE-aaF">
                                 <rect key="frame" x="16" y="131" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -43,12 +52,12 @@
                                 <rect key="frame" x="269" y="468" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10C" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-ft-uDa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6C" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-ft-uDa">
                                 <rect key="frame" x="178" y="468" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="331-kb-jyD">
-                                <rect key="frame" x="107" y="129" width="83" height="128"/>
+                                <rect key="frame" x="107" y="131" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dealer's Hand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRL-p8-FDc">
@@ -59,15 +68,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLV-Y7-Tt7">
-                                <rect key="frame" x="0.0" y="631" width="190" height="36"/>
+                                <rect key="frame" x="0.0" y="618" width="190" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Draw Another Card"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Hit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-fX-3ch">
-                                <rect key="frame" x="190" y="631" width="185" height="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray_back_side" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-xN-z19">
+                                <rect key="frame" x="123" y="304" width="128" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -81,6 +94,7 @@
                     <connections>
                         <outlet property="dealerCard1" destination="kBk-xE-aaF" id="LIA-9y-29P"/>
                         <outlet property="dealerCard2" destination="331-kb-jyD" id="dTQ-rE-9ZE"/>
+                        <outlet property="deckView" destination="hj6-xN-z19" id="Mes-Py-yFx"/>
                         <outlet property="playerCard1" destination="bYw-ft-uDa" id="8FO-md-6lD"/>
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
                         <outlet property="scoreLabel" destination="Gct-cL-D9f" id="4nA-8r-Xx5"/>
@@ -93,7 +107,10 @@
     </scenes>
     <resources>
         <image name="10C" width="165.83999633789062" height="253.44000244140625"/>
+        <image name="6C" width="163.91999816894531" height="252.47999572753906"/>
+        <image name="8H" width="165.83999633789062" height="253.44000244140625"/>
         <image name="gray_back" width="165.83999633789062" height="253.44000244140625"/>
+        <image name="gray_back_side" width="253.44000244140625" height="165.83999633789062"/>
         <image name="greenfelt" width="108" height="72"/>
     </resources>
 </document>
