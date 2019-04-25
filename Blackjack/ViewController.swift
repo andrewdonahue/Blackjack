@@ -39,6 +39,57 @@ class ViewController: UIViewController
     var image11 = UIImage(named: "11-4H")
     var image12 = UIImage(named: "12-4S")
     
+    var image13 = UIImage(named: "13-5C")
+    var image14 = UIImage(named: "14-5D")
+    var image15 = UIImage(named: "15-5H")
+    var image16 = UIImage(named: "16-5S")
+    
+    var image17 = UIImage(named: "17-6C")
+    var image18 = UIImage(named: "18-6D")
+    var image19 = UIImage(named: "19-6H")
+    var image20 = UIImage(named: "20-6S")
+    
+    var image21 = UIImage(named: "21-7C")
+    var image22 = UIImage(named: "22-7D")
+    var image23 = UIImage(named: "23-7H")
+    var image24 = UIImage(named: "24-7S")
+    
+    var image25 = UIImage(named: "25-8C")
+    var image26 = UIImage(named: "26-8D")
+    var image27 = UIImage(named: "27-8H")
+    var image28 = UIImage(named: "28-8S")
+    
+    var image29 = UIImage(named: "29-9C")
+    var image30 = UIImage(named: "30-9D")
+    var image31 = UIImage(named: "31-9H")
+    var image32 = UIImage(named: "32-9S")
+    
+    var image33 = UIImage(named: "33-10C")
+    var image34 = UIImage(named: "34-10D")
+    var image35 = UIImage(named: "35-10H")
+    var image36 = UIImage(named: "36-10S")
+    
+    var image37 = UIImage(named: "37-AC")
+    var image38 = UIImage(named: "38-AD")
+    var image39 = UIImage(named: "39-AH")
+    var image40 = UIImage(named: "40-AS")
+    
+    var image41 = UIImage(named: "41-JC")
+    var image42 = UIImage(named: "42-JD")
+    var image43 = UIImage(named: "43-JH")
+    var image44 = UIImage(named: "44-JS")
+    
+    var image45 = UIImage(named: "45-KC")
+    var image46 = UIImage(named: "46-KD")
+    var image47 = UIImage(named: "47-KH")
+    var image48 = UIImage(named: "48-KS")
+    
+    var image49 = UIImage(named: "49-QC")
+    var image50 = UIImage(named: "50-QD")
+    var image51 = UIImage(named: "51-QH")
+    var image52 = UIImage(named: "52-QS")
+    
+    
     func roundBegin()
     {
         let rand1 = Int.random(in: 1...52)
