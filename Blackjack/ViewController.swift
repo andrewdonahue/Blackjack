@@ -89,7 +89,6 @@ class ViewController: UIViewController
     var image51 = UIImage(named: "51-QH")
     var image52 = UIImage(named: "52-QS")
     
-    
     func roundBegin()
     {
         let rand1 = Int.random(in: 1...52)
@@ -108,33 +107,53 @@ class ViewController: UIViewController
         {
             playerCard1.image = image1
         }
-        if rand1 == 2
+       else if rand1 == 2
         {
             playerCard1.image = image2
         }
-        if rand1 == 3
+       else if rand1 == 3
         {
             playerCard1.image = image3
         }
-        if rand1 == 4
+       else if rand1 == 4
         {
             playerCard1.image = image4
         }
-        if rand1 == 5
+       else if rand1 == 5
         {
             playerCard1.image = image5
         }
-        if rand1 == 6
+       else if rand1 == 6
         {
             playerCard1.image = image6
         }
-        if rand1 == 7
+       else if rand1 == 7
         {
             playerCard1.image = image7
         }
-        if rand1 == 8
+       else if rand1 == 8
         {
             playerCard1.image = image8
+        }
+       else if rand1 == 9
+        {
+            playerCard1.image = image9
+        }
+       else if rand1 == 10
+        {
+            playerCard1.image = image10
+        }
+       else if rand1 == 11
+        {
+            playerCard1.image = image11
+        }
+        else if rand1 == 12
+        {
+            playerCard1.image = image12
+        }
+        else if rand1 == 13
+        {
+            playerCard1.image = image13
         }
         
         
