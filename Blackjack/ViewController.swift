@@ -34,16 +34,14 @@ class ViewController: UIViewController
     var image7 = UIImage(named: "7-3H")
     var image8 = UIImage(named: "8-3S")
     
-    
-
-
-
-
-
+    var image9 = UIImage(named: "9-4C")
+    var image10 = UIImage(named: "10-4D")
+    var image11 = UIImage(named: "11-4H")
+    var image12 = UIImage(named: "12-4S")
     
     func roundBegin()
     {
-        let rand1 = Int.random(in: 1...2)
+        let rand1 = Int.random(in: 1...52)
         let rand2 = Int.random(in: 1...52)
         let rand3 = Int.random(in: 1...52)
         let rand4 = Int.random(in: 1...52)
@@ -55,10 +53,43 @@ class ViewController: UIViewController
         rand1 != rand3
         rand2 != rand4
         
-       if rand1 == 1
-       {
-        playerCard1.image = image1
+        if rand1 == 1
+        {
+            playerCard1.image = image1
         }
+        if rand1 == 2
+        {
+            playerCard1.image = image2
+        }
+        if rand1 == 3
+        {
+            playerCard1.image = image3
+        }
+        if rand1 == 4
+        {
+            playerCard1.image = image4
+        }
+        if rand1 == 5
+        {
+            playerCard1.image = image5
+        }
+        if rand1 == 6
+        {
+            playerCard1.image = image6
+        }
+        if rand1 == 7
+        {
+            playerCard1.image = image7
+        }
+        if rand1 == 8
+        {
+            playerCard1.image = image8
+        }
+        
+        
+        
+        
+        
     }
     @IBAction func RSTapped(_ sender: UIButton)
     {
