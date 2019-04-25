@@ -138,9 +138,58 @@ class ViewController: UIViewController
         }
         
         
-        
-        
-        
+        if rand2 == 1
+        {
+            playerCard2.image = image1
+        }
+        else if rand2 == 2
+        {
+            playerCard2.image = image2
+        }
+        else if rand2 == 3
+        {
+            playerCard2.image = image3
+        }
+        else if rand2 == 4
+        {
+            playerCard2.image = image4
+        }
+        else if rand2 == 5
+        {
+            playerCard2.image = image5
+        }
+        else if rand2 == 6
+        {
+            playerCard2.image = image6
+        }
+        else if rand2 == 7
+        {
+            playerCard2.image = image7
+        }
+        else if rand2 == 8
+        {
+            playerCard2.image = image8
+        }
+        else if rand2 == 9
+        {
+            playerCard2.image = image9
+        }
+        else if rand2 == 10
+        {
+            playerCard2.image = image10
+        }
+        else if rand2 == 11
+        {
+            playerCard2.image = image11
+        }
+        else if rand2 == 12
+        {
+            playerCard2.image = image12
+        }
+        else if rand2 == 13
+        {
+            playerCard2.image = image13
+        }
     }
     @IBAction func RSTapped(_ sender: UIButton)
     {
