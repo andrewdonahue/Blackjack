@@ -114,7 +114,8 @@ class ViewController: UIViewController
     }
     @IBAction func hitTapped(_ sender: UIButton)
     {
-        
+       // cards.remove(at: 0)
+        //.image = cards.first
     }
     @IBAction func standTapped(_ sender: UIButton)
     {
