@@ -99,6 +99,10 @@
                                     <action selector="RSTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="22q-bW-A0t"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="U8c-Ts-Gxz">
+                                <rect key="frame" x="107" y="129" width="83" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
