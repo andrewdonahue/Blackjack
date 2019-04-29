@@ -84,10 +84,6 @@
                                     <action selector="hitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghw-1N-q5M"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray_back_side" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-xN-z19">
-                                <rect key="frame" x="120" y="305" width="128" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-z8-8Aw">
                                 <rect key="frame" x="15" y="468" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -120,7 +116,6 @@
                     <connections>
                         <outlet property="dealerCard1" destination="kBk-xE-aaF" id="LIA-9y-29P"/>
                         <outlet property="dealerCard2" destination="331-kb-jyD" id="dTQ-rE-9ZE"/>
-                        <outlet property="deckView" destination="hj6-xN-z19" id="Mes-Py-yFx"/>
                         <outlet property="playerCard1" destination="bYw-ft-uDa" id="8FO-md-6lD"/>
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
                         <outlet property="playerCard3" destination="9UU-b1-u3O" id="aMq-gQ-X3d"/>
@@ -137,7 +132,6 @@
         <image name="14-5D" width="165.83999633789062" height="253.44000244140625"/>
         <image name="8-3S" width="165.83999633789062" height="253.44000244140625"/>
         <image name="gray_back" width="165.83999633789062" height="253.44000244140625"/>
-        <image name="gray_back_side" width="253.44000244140625" height="165.83999633789062"/>
         <image name="greenfelt" width="108" height="72"/>
     </resources>
 </document>
