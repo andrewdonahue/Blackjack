@@ -88,10 +88,6 @@
                                 <rect key="frame" x="120" y="305" width="128" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="U8c-Ts-Gxz">
-                                <rect key="frame" x="107" y="129" width="83" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-z8-8Aw">
                                 <rect key="frame" x="15" y="468" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,6 +99,14 @@
                                     <action selector="RSTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="22q-bW-A0t"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="U8c-Ts-Gxz">
+                                <rect key="frame" x="107" y="129" width="83" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="14-5D" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-b1-u3O">
+                                <rect key="frame" x="242" y="468" width="83" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -119,6 +123,7 @@
                         <outlet property="deckView" destination="hj6-xN-z19" id="Mes-Py-yFx"/>
                         <outlet property="playerCard1" destination="bYw-ft-uDa" id="8FO-md-6lD"/>
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
+                        <outlet property="playerCard3" destination="9UU-b1-u3O" id="aMq-gQ-X3d"/>
                         <outlet property="scoreLabel" destination="Gct-cL-D9f" id="4nA-8r-Xx5"/>
                     </connections>
                 </viewController>

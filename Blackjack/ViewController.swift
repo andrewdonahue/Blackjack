@@ -15,6 +15,7 @@ class ViewController: UIViewController
     @IBOutlet weak var dealerCard2: UIImageView!
     @IBOutlet weak var playerCard1: UIImageView!
     @IBOutlet weak var playerCard2: UIImageView!
+    @IBOutlet weak var playerCard3: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var deckView: UIImageView!
     var cards: [UIImage] = [UIImage]()
@@ -22,6 +23,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        playerCard3.isHidden = true
         //dfgf
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -116,8 +118,11 @@ class ViewController: UIViewController
     {
         self.playerCard2.frame.origin.x -= 65
       self.playerCard2.layer.zPosition = 5
-       // cards.remove(at: 0)
-        //.image = cards.first
+        self.playerCard3.layer.zPosition = 6
+      playerCard3.isHidden = false
+       cards.remove(at: 0)
+    playerCard3.image = cards.first
+        
     }
     @IBAction func standTapped(_ sender: UIButton)
     {
