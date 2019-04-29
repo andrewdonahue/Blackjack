@@ -116,6 +116,8 @@ class ViewController: UIViewController
     {
         self.playerCard2.frame.origin.x -= 65
       self.playerCard2.layer.zPosition = 5
+       // cards.remove(at: 0)
+        //.image = cards.first
     }
     @IBAction func standTapped(_ sender: UIButton)
     {
