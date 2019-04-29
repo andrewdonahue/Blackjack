@@ -117,11 +117,14 @@ class ViewController: UIViewController
     @IBAction func hitTapped(_ sender: UIButton)
     {
         self.playerCard2.frame.origin.x -= 65
-      self.playerCard2.layer.zPosition = 5
+        self.playerCard2.layer.zPosition = 5
         self.playerCard3.layer.zPosition = 6
-      playerCard3.isHidden = false
-       cards.remove(at: 0)
-    playerCard3.image = cards.first
+        playerCard3.isHidden = false
+        cards.remove(at: 0)
+        playerCard3.image = cards.first
+        playerCard4.isHidden = false
+        cards.remove(at: 0)
+        playercard4.image = cards.first
         
     }
     @IBAction func standTapped(_ sender: UIButton)
