@@ -114,7 +114,8 @@ class ViewController: UIViewController
     }
     @IBAction func hitTapped(_ sender: UIButton)
     {
-        
+        self.playerCard2.frame.origin.x -= 65
+      self.playerCard2.layer.zPosition = 5
     }
     @IBAction func standTapped(_ sender: UIButton)
     {
