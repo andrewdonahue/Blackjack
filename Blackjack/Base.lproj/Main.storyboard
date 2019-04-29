@@ -103,6 +103,10 @@
                                 <rect key="frame" x="242" y="468" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="14-5D" translatesAutoresizingMaskIntoConstraints="NO" id="0hY-bc-Ra7">
+                                <rect key="frame" x="269" y="468" width="83" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -119,6 +123,7 @@
                         <outlet property="playerCard1" destination="bYw-ft-uDa" id="8FO-md-6lD"/>
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
                         <outlet property="playerCard3" destination="9UU-b1-u3O" id="aMq-gQ-X3d"/>
+                        <outlet property="playerCard4" destination="0hY-bc-Ra7" id="7BV-aG-8oP"/>
                         <outlet property="scoreLabel" destination="Gct-cL-D9f" id="4nA-8r-Xx5"/>
                     </connections>
                 </viewController>
