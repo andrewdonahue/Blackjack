@@ -16,6 +16,7 @@ class ViewController: UIViewController
     @IBOutlet weak var playerCard1: UIImageView!
     @IBOutlet weak var playerCard2: UIImageView!
     @IBOutlet weak var playerCard3: UIImageView!
+    @IBOutlet weak var playerCard4: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var deckView: UIImageView!
     var cards: [UIImage] = [UIImage]()
@@ -24,6 +25,7 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         playerCard3.isHidden = true
+        playerCard4.isHidden = true
         //dfgf
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -108,6 +110,10 @@ class ViewController: UIViewController
         dealerCard1.image = cards.first
         cards.remove(at: 0)
         dealerCard2.image = cards.first
+        self.playerCard3.isHidden = true
+        self.playerCard4.isHidden = true
+        self.playerCard2.frame.origin.x += 65
+        
 
     }
     @IBAction func RSTapped(_ sender: UIButton)
@@ -116,12 +122,23 @@ class ViewController: UIViewController
     }
     @IBAction func hitTapped(_ sender: UIButton)
     {
-        self.playerCard2.frame.origin.x -= 65
-      self.playerCard2.layer.zPosition = 5
-        self.playerCard3.layer.zPosition = 6
-      playerCard3.isHidden = false
-       cards.remove(at: 0)
-    playerCard3.image = cards.first
+      if playerCard3.isHidden == true
+        {
+            self.playerCard2.layer.zPosition = 5
+            self.playerCard3.layer.zPosition = 6
+            self.playerCard2.frame.origin.x -= 65
+            playerCard3.isHidden = false
+            cards.remove(at: 0)
+            playerCard3.image = cards.first
+        }
+        else
+        {
+            //move other cards to left
+            self.playerCard4.layer.zPosition = 7
+            cards.remove(at: 0)
+            playerCard4.image = cards.first
+            playerCard4.isHidden = false
+        }
         
     }
     @IBAction func standTapped(_ sender: UIButton)
