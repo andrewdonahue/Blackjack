@@ -104,8 +104,7 @@ class ViewController: UIViewController
         playerCard2.image = cards.first
         cards.remove(at: 0)
         dealerCard1.image = cards.first
-        cards.remove(at: 0)
-        dealerCard2.image = cards.first
+        
 
     }
     @IBAction func RSTapped(_ sender: UIButton)
