@@ -101,7 +101,6 @@ class ViewController: UIViewController
     
     func roundBegin()
     {
-        
         cards.shuffle()
         playerCard1.image = cards.first
         cards.remove(at: 0)
@@ -136,8 +135,8 @@ class ViewController: UIViewController
             playerCard3.isHidden = false
             cards.remove(at: 0)
             playerCard3.image = cards.first
-        
-         if playerCard4.isHidden == true
+        }
+      else if playerCard3.isHidden == false
          {
             //move other cards to left
             self.playerCard4.layer.zPosition = 7
@@ -145,7 +144,7 @@ class ViewController: UIViewController
             playerCard4.image = cards.first
             playerCard4.isHidden = false
             }
-        }
+        
     else
       {
         roundBegin()
