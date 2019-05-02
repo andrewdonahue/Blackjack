@@ -101,6 +101,25 @@ class ViewController: UIViewController
     
     func roundBegin()
     {
+        if playerCard3.isHidden == false
+        {
+            self.playerCard3.isHidden = true
+            playerCard3.image = nil
+            self.playerCard2.frame.origin.x += 65
+        }
+        else if playerCard4.isHidden == false
+        {
+            self.playerCard4.isHidden = true
+            playerCard4.image = nil
+        }
+        playerCard3.isHidden = true
+        playerCard4.isHidden = true
+        
+        
+        if cards.count < 8
+        {
+            // repopulate deck...
+        }
         cards.shuffle()
         playerCard1.image = cards.first
         cards.remove(at: 0)
@@ -109,15 +128,7 @@ class ViewController: UIViewController
         dealerCard1.image = cards.first
         cards.remove(at: 0)
         dealerCard2.image = cards.first
-        if playerCard3.isHidden == false
-        {
-            self.playerCard3.isHidden = true
-            self.playerCard2.frame.origin.x += 65
-        }
-        else if playerCard4.isHidden == false
-        {
-            self.playerCard4.isHidden = true
-        }
+        
         
 
     }
