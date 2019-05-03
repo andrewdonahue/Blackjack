@@ -103,6 +103,8 @@ class ViewController: UIViewController
     //Func to shuffle cards at round start
     func roundBegin()
     {
+        counter = 0
+        
         if playerCard3.isHidden == false
         {
             self.playerCard3.isHidden = true
@@ -145,9 +147,13 @@ class ViewController: UIViewController
     }
     
     //"Hit" button tapped...
+    var counter = 0
+    
     @IBAction func hitTapped(_ sender: UIButton)
     {
-      if playerCard3.isHidden == true
+      counter = counter + 1
+        
+      if counter == 1
         {
         self.playerCard2.layer.zPosition = 5
         self.playerCard3.layer.zPosition = 6
@@ -157,7 +163,7 @@ class ViewController: UIViewController
         playerCard3.image = cards.first
         }
         
-      else if playerCard3.isHidden == false
+      else if counter == 2
         {
         self.playerCard4.layer.zPosition = 7
         cards.remove(at: 0)
@@ -165,7 +171,7 @@ class ViewController: UIViewController
         playerCard4.isHidden = false
         }
         
-      else if playerCard4.isHidden == false
+      else if counter == 3
         {
         self.playerCard5.layer.zPosition = 8
         cards.remove(at: 0)
@@ -175,7 +181,7 @@ class ViewController: UIViewController
         
      else
         {
-        self.scoreLabel.textColor = UIColor.green
+            //Trigger Alert
         }
     }
     
