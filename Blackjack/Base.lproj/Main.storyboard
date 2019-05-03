@@ -18,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-GI-try">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-fX-3ch">
                                 <rect key="frame" x="190" y="618" width="185" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,14 +104,12 @@
                                 <rect key="frame" x="269" y="468" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="14-5D" translatesAutoresizingMaskIntoConstraints="NO" id="knb-bI-DB8">
+                                <rect key="frame" x="292" y="468" width="83" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Aaf-GI-try" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FLR-Np-hmz"/>
-                            <constraint firstItem="Aaf-GI-try" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GWd-bd-k9F"/>
-                            <constraint firstItem="Aaf-GI-try" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="J9J-T2-ngU"/>
-                            <constraint firstItem="Aaf-GI-try" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lJY-zG-gaf"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.46355168106555283" green="0.80392156862745101" blue="0.45988994923218418" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -125,12 +119,13 @@
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
                         <outlet property="playerCard3" destination="9UU-b1-u3O" id="aMq-gQ-X3d"/>
                         <outlet property="playerCard4" destination="0hY-bc-Ra7" id="7BV-aG-8oP"/>
+                        <outlet property="playerCard5" destination="knb-bI-DB8" id="42h-0a-6kN"/>
                         <outlet property="scoreLabel" destination="Gct-cL-D9f" id="4nA-8r-Xx5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="213"/>
+            <point key="canvasLocation" x="82" y="0.0"/>
         </scene>
     </scenes>
     <resources>
