@@ -148,7 +148,7 @@ class ViewController: UIViewController
         }
     else
       {
-        roundBegin()
+        self.scoreLabel.textColor = UIColor.green
         }
     }
     @IBAction func standTapped(_ sender: UIButton)
