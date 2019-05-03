@@ -115,7 +115,15 @@ class ViewController: UIViewController
             self.playerCard4.isHidden = true
             playerCard4.image = nil
         }
-
+        else if playerCard5.isHidden == false
+        {
+            self.playerCard5.isHidden = true
+            playerCard5.image = nil
+        }
+        playerCard3.isHidden = true
+        playerCard4.isHidden = true
+        playerCard5.isHidden = true
+        
         if cards.count < 8
         {
     //Repopulate deck...
