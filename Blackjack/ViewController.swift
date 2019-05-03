@@ -182,6 +182,20 @@ class ViewController: UIViewController
      else
         {
             //Trigger Alert
+//            let newAlert = UIAlertController(title: "Thank You", message: "We appreciate your service", preferredStyle: .alert)
+//
+//            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+//                self.counter = self.counter + 1
+//                self.myLabel.text = "\(self.counter)"
+//                self.alert()
+//            })
+//
+//            let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+//
+//            newAlert.addAction(ok)
+//            newAlert.addAction(cancel)
+//
+//            present(newAlert, animated: true, completion: nil)
         }
     }
     
