@@ -17,6 +17,7 @@ class ViewController: UIViewController
     @IBOutlet weak var playerCard2: UIImageView!
     @IBOutlet weak var playerCard3: UIImageView!
     @IBOutlet weak var playerCard4: UIImageView!
+    @IBOutlet weak var playerCard5: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var deckView: UIImageView!
     var cards: [UIImage] = [UIImage]()
@@ -26,6 +27,7 @@ class ViewController: UIViewController
         super.viewDidLoad()
         playerCard3.isHidden = true
         playerCard4.isHidden = true
+        playerCard5.isHidden = true
         //dfgf
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -142,6 +144,7 @@ class ViewController: UIViewController
         {
             self.playerCard2.layer.zPosition = 5
             self.playerCard3.layer.zPosition = 6
+            
             self.playerCard2.frame.origin.x -= 65
             playerCard3.isHidden = false
             cards.remove(at: 0)
@@ -155,10 +158,17 @@ class ViewController: UIViewController
             playerCard4.image = cards.first
             playerCard4.isHidden = false
             }
+        else if playerCard4.isHidden == false
+      {
+        self.playerCard5.layer.zPosition = 8
+        cards.remove(at: 0)
+        playerCard5.image = cards.first
+        playerCard5.isHidden = false
+      }
         
     else
       {
-        roundBegin()
+        self.scoreLabel.textColor = UIColor.green
         }
     }
     @IBAction func standTapped(_ sender: UIButton)
