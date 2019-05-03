@@ -19,23 +19,22 @@ class ViewController: UIViewController
     @IBOutlet weak var playerCard4: UIImageView!
     @IBOutlet weak var playerCard5: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var deckView: UIImageView!
     var cards: [UIImage] = [UIImage]()
     
     override func viewDidLoad()
     {
+        //Hiding "Hit" ImageViews
         super.viewDidLoad()
         playerCard3.isHidden = true
         playerCard4.isHidden = true
         playerCard5.isHidden = true
-        //dfgf
-        
-        // Do any additional setup after loading the view, typically from a nib.
+
+        //Numbering Cards
         cards = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28, image29, image30, image31, image32, image33, image34, image35, image36, image37, image38, image39, image40, image41, image42, image43, image44, image45, image46, image47, image48, image49, image50, image51, image52] as! [UIImage]
         
        
     }
-
+    //Making image assets variables
     var image1 = UIImage(named: "1-2C")
     var image2 = UIImage(named: "2-2D")
     var image3 = UIImage(named: "3-2S")
@@ -101,6 +100,7 @@ class ViewController: UIViewController
     var image51 = UIImage(named: "51-QH")
     var image52 = UIImage(named: "52-QS")
     
+    //Func to shuffle cards at round start
     func roundBegin()
     {
         if playerCard3.isHidden == false
@@ -109,6 +109,7 @@ class ViewController: UIViewController
             playerCard3.image = nil
             self.playerCard2.frame.origin.x += 65
         }
+            
         else if playerCard4.isHidden == false
         {
             self.playerCard4.isHidden = true
@@ -125,7 +126,7 @@ class ViewController: UIViewController
         
         if cards.count < 8
         {
-            // repopulate deck...
+    //Repopulate deck...
         }
         cards.shuffle()
         playerCard1.image = cards.first
@@ -135,47 +136,50 @@ class ViewController: UIViewController
         dealerCard1.image = cards.first
         cards.remove(at: 0)
         dealerCard2.image = cards.first
-        
-        
-
-    }
+        }
+    
+    //"Round Start" button tapped...
     @IBAction func RSTapped(_ sender: UIButton)
     {
         roundBegin()
     }
+    
+    //"Hit" button tapped...
     @IBAction func hitTapped(_ sender: UIButton)
     {
       if playerCard3.isHidden == true
         {
-            self.playerCard2.layer.zPosition = 5
-            self.playerCard3.layer.zPosition = 6
-            
-            self.playerCard2.frame.origin.x -= 65
-            playerCard3.isHidden = false
-            cards.remove(at: 0)
-            playerCard3.image = cards.first
+        self.playerCard2.layer.zPosition = 5
+        self.playerCard3.layer.zPosition = 6
+        self.playerCard2.frame.origin.x -= 65
+        playerCard3.isHidden = false
+        cards.remove(at: 0)
+        playerCard3.image = cards.first
         }
+        
       else if playerCard3.isHidden == false
-         {
-            //move other cards to left
-            self.playerCard4.layer.zPosition = 7
-            cards.remove(at: 0)
-            playerCard4.image = cards.first
-            playerCard4.isHidden = false
-            }
-        else if playerCard4.isHidden == false
-      {
+        {
+        self.playerCard4.layer.zPosition = 7
+        cards.remove(at: 0)
+        playerCard4.image = cards.first
+        playerCard4.isHidden = false
+        }
+        
+      else if playerCard4.isHidden == false
+        {
         self.playerCard5.layer.zPosition = 8
         cards.remove(at: 0)
         playerCard5.image = cards.first
         playerCard5.isHidden = false
-      }
+        }
         
-    else
-      {
+     else
+        {
         self.scoreLabel.textColor = UIColor.green
         }
     }
+    
+    //"Stand" button tapped...
     @IBAction func standTapped(_ sender: UIButton)
     {
         
