@@ -126,7 +126,7 @@ class ViewController: UIViewController
         
         if cards.count < 8
         {
-    //Repopulate deck...
+    //
         }
         cards.shuffle()
         playerCard1.image = cards.first
