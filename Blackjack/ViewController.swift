@@ -31,9 +31,107 @@ class ViewController: UIViewController
 
         //Numbering Cards
         cards = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28, image29, image30, image31, image32, image33, image34, image35, image36, image37, image38, image39, image40, image41, image42, image43, image44, image45, image46, image47, image48, image49, image50, image51, image52] as! [UIImage]
+        //playerCard1 Tags
+        if playerCard1.image == image1
+        {
+            playerCard1.tag = 2
+        }
+        if playerCard1.image == image2
+        {
+            playerCard1.tag = 2
+        }
+        if playerCard1.image == image3
+        {
+            playerCard1.tag = 2
+        }
+        if playerCard1.image == image4
+        {
+            playerCard1.tag = 2
+        }
+        if playerCard1.image == image5
+        {
+            playerCard1.tag = 3
+        }
+        if playerCard1.image == image6
+        {
+            playerCard1.tag = 3
+        }
+        if playerCard1.image == image7
+        {
+            playerCard1.tag = 3
+        }
+        if playerCard1.image == image8
+        {
+            playerCard1.tag = 3
+        }
+        if playerCard1.image == image9
+        {
+            playerCard1.tag = 4
+        }
+        if playerCard1.image == image10
+        {
+            playerCard1.tag = 4
+        }
+        if playerCard1.image == image11
+        {
+            playerCard1.tag = 4
+        }
+        if playerCard1.image == image12
+        {
+            playerCard1.tag = 4
+        }
+        if playerCard1.image == image13
+        {
+            playerCard1.tag = 5
+        }
+        if playerCard1.image == image14
+        {
+            playerCard1.tag = 5
+        }
+        if playerCard1.image == image15
+        {
+            playerCard1.tag = 5
+        }
+        if playerCard1.image == image16
+        {
+            playerCard1.tag = 5
+        }
+        if playerCard1.image == image17
+        {
+            playerCard1.tag = 6
+        }
+        if playerCard1.image == image18
+        {
+            playerCard1.tag = 6
+        }
+        if playerCard1.image == image19
+        {
+            playerCard1.tag = 6
+        }
+        if playerCard1.image == image20
+        {
+            playerCard1.tag = 6
+        }
+        if playerCard1.image == image21
+        {
+            playerCard1.tag = 7
+        }
+        if playerCard1.image == image22
+        {
+            playerCard1.tag = 7
+        }
+        if playerCard1.image == image23
+        {
+            playerCard1.tag = 7
+        }
+        if playerCard1.image == image24
+        {
+            playerCard1.tag = 7
+        }
         
-       
     }
+
+    
     //Making image assets variables
     var image1 = UIImage(named: "1-2C")
     var image2 = UIImage(named: "2-2D")
@@ -99,6 +197,8 @@ class ViewController: UIViewController
     var image50 = UIImage(named: "50-QD")
     var image51 = UIImage(named: "51-QH")
     var image52 = UIImage(named: "52-QS")
+    
+   
     
     //Func to shuffle cards at round start
     func roundBegin()
@@ -182,20 +282,15 @@ class ViewController: UIViewController
      else
         {
             //Trigger Alert
-//            let newAlert = UIAlertController(title: "Thank You", message: "We appreciate your service", preferredStyle: .alert)
-//
-//            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
-//                self.counter = self.counter + 1
-//                self.myLabel.text = "\(self.counter)"
-//                self.alert()
-//            })
-//
-//            let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-//
-//            newAlert.addAction(ok)
-//            newAlert.addAction(cancel)
-//
-//            present(newAlert, animated: true, completion: nil)
+            let newAlert = UIAlertController(title: "Error", message: "Maximum number of hits has been reached.", preferredStyle: .alert)
+
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                newAlert.dismiss(animated: true, completion: nil)
+            })
+
+            newAlert.addAction(ok)
+
+            present(newAlert, animated: true, completion: nil)
         }
     }
     
