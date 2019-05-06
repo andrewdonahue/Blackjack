@@ -19,7 +19,7 @@ class ViewController: UIViewController
     @IBOutlet weak var playerCard4: UIImageView!
     @IBOutlet weak var playerCard5: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
-    var cards: [UIImage] = [UIImage]()
+    var cards: [Card] = [Card]()
     
     override func viewDidLoad()
     {
@@ -31,6 +31,9 @@ class ViewController: UIViewController
 
         //Numbering Cards
         cards = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28, image29, image30, image31, image32, image33, image34, image35, image36, image37, image38, image39, image40, image41, image42, image43, image44, image45, image46, image47, image48, image49, image50, image51, image52] as! [UIImage]
+        
+        let card1 = Card(image: image1!, v: 2)
+        
     }
     
     //Making image assets variables
@@ -132,7 +135,7 @@ class ViewController: UIViewController
     //
         }
         cards.shuffle()
-        playerCard1.image = cards.first
+        playerCard1.image = cards.first?.image
         cards.remove(at: 0)
         playerCard2.image = cards.first
         cards.remove(at: 0)

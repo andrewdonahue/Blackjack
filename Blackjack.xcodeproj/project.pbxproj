@@ -12,6 +12,7 @@
 		AC1307A22270D19800823CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1307A02270D19800823CA6 /* Main.storyboard */; };
 		AC1307A42270D19A00823CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1307A32270D19A00823CA6 /* Assets.xcassets */; };
 		AC1307A72270D19A00823CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1307A52270D19A00823CA6 /* LaunchScreen.storyboard */; };
+		AC46F6C62280AF09003F4B53 /* CardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F6C52280AF09003F4B53 /* CardImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		AC1307A32270D19A00823CA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC1307A62270D19A00823CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC1307A82270D19A00823CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC46F6C52280AF09003F4B53 /* CardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				AC13079C2270D19800823CA6 /* AppDelegate.swift */,
 				AC13079E2270D19800823CA6 /* ViewController.swift */,
 				AC1307A02270D19800823CA6 /* Main.storyboard */,
+				AC46F6C52280AF09003F4B53 /* CardImage.swift */,
 				AC1307A32270D19A00823CA6 /* Assets.xcassets */,
 				AC1307A52270D19A00823CA6 /* LaunchScreen.storyboard */,
 				AC1307A82270D19A00823CA6 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC46F6C62280AF09003F4B53 /* CardImage.swift in Sources */,
 				AC13079F2270D19800823CA6 /* ViewController.swift in Sources */,
 				AC13079D2270D19800823CA6 /* AppDelegate.swift in Sources */,
 			);
