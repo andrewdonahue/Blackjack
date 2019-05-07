@@ -201,8 +201,79 @@ class ViewController: UIViewController
     //"Stand" button tapped...
     @IBAction func standTapped(_ sender: UIButton)
     {
-        
+        checkForWinner()
     }
-    
+    //find who is winning
+    func checkForWinner()
+    {
+        let playerHand = playerCard1.tag + playerCard2.tag + playerCard3.tag + playerCard4.tag + playerCard5.tag
+        let dealerHand = dealerCard1.tag + dealerCard2.tag
+        if playerHand > 21
+        {
+            let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                newAlert.dismiss(animated: true, completion: nil)
+            })
+            
+            newAlert.addAction(ok)
+            
+            present(newAlert, animated: true, completion: nil)
+        }
+        else if  playerHand == 21 && dealerHand != 21
+        {
+            let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                newAlert.dismiss(animated: true, completion: nil)
+            })
+            
+            newAlert.addAction(ok)
+            
+            present(newAlert, animated: true, completion: nil)
+        }
+        else if playerHand < 21 && dealerHand < 21
+        {
+            let playerScore = 21 - (playerCard1.tag + playerCard2.tag + playerCard3.tag + playerCard4.tag + playerCard5.tag)
+            let dealerScore = 21 - (dealerCard1.tag + dealerCard2.tag)
+            
+            if playerScore > dealerScore
+            {
+                let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                    newAlert.dismiss(animated: true, completion: nil)
+                })
+                
+                newAlert.addAction(ok)
+                
+                present(newAlert, animated: true, completion: nil)
+            }
+            else if playerScore == dealerScore
+            {
+                let newAlert = UIAlertController(title: "You Tied!", message: "Better luck next time.", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                    newAlert.dismiss(animated: true, completion: nil)
+                })
+                
+                newAlert.addAction(ok)
+                
+                present(newAlert, animated: true, completion: nil)
+            }
+            else if playerScore < dealerScore
+            {
+                let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                    newAlert.dismiss(animated: true, completion: nil)
+                })
+                
+                newAlert.addAction(ok)
+                
+                present(newAlert, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
