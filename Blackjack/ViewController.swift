@@ -33,7 +33,53 @@ class ViewController: UIViewController
         cards = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28, image29, image30, image31, image32, image33, image34, image35, image36, image37, image38, image39, image40, image41, image42, image43, image44, image45, image46, image47, image48, image49, image50, image51, image52] as! [UIImage]
         
         let card1 = Card(image: image1!, v: 2)
+        let card2 = Card(image: image2!, v: 2)
+        let card3 = Card(image: image3!, v: 2)
+        let card4 = Card(image: image4!, v: 2)
         
+        let card5 = Card(image: image5!, v: 3)
+        let card6 = Card(image: image6!, v: 3)
+        let card7 = Card(image: image7!, v: 3)
+        let card8 = Card(image: image8!, v: 3)
+
+        let card9 = Card(image: image9!, v: 4)
+        let card10 = Card(image: image10!, v: 4)
+        let card11 = Card(image: image11!, v: 4)
+        let card12 = Card(image: image12!, v: 4)
+
+        let card13 = Card(image: image13!, v: 5)
+        let card14 = Card(image: image14!, v: 5)
+        let card15 = Card(image: image15!, v: 5)
+        let card16 = Card(image: image16!, v: 5)
+        
+        let card17 = Card(image: image17!, v: 6)
+        let card18 = Card(image: image18!, v: 6)
+        let card19 = Card(image: image19!, v: 6)
+        let card20 = Card(image: image20!, v: 6)
+
+        let card21 = Card(image: image21!, v: 7)
+        let card22 = Card(image: image22!, v: 7)
+        let card23 = Card(image: image23!, v: 7)
+        let card24 = Card(image: image24!, v: 7)
+
+        let card25 = Card(image: image25!, v: 8)
+        let card26 = Card(image: image26!, v: 8)
+        let card27 = Card(image: image27!, v: 8)
+        let card28 = Card(image: image28!, v: 8)
+
+        let card29 = Card(image: image29!, v: 9)
+        let card30 = Card(image: image30!, v: 9)
+        let card31 = Card(image: image31!, v: 9)
+        let card32 = Card(image: image32!, v: 9)
+        
+        let card33 = Card(image: image29!, v: 9)
+        let card34 = Card(image: image29!, v: 9)
+        let card35 = Card(image: image29!, v: 9)
+        let card36 = Card(image: image29!, v: 9)
+
+        
+
+
     }
     
     //Making image assets variables
@@ -137,11 +183,11 @@ class ViewController: UIViewController
         cards.shuffle()
         playerCard1.image = cards.first?.image
         cards.remove(at: 0)
-        playerCard2.image = cards.first
+        playerCard2.image = cards.first?.image
         cards.remove(at: 0)
-        dealerCard1.image = cards.first
+        dealerCard1.image = cards.first?.image
         cards.remove(at: 0)
-        dealerCard2.image = cards.first
+        dealerCard2.image = cards.first?.image
         }
     
     //"Round Start" button tapped...
@@ -164,14 +210,14 @@ class ViewController: UIViewController
         self.playerCard2.frame.origin.x -= 65
         playerCard3.isHidden = false
         cards.remove(at: 0)
-        playerCard3.image = cards.first
+        playerCard3.image = cards.first?.image
         }
         
       else if counter == 2
         {
         self.playerCard4.layer.zPosition = 7
         cards.remove(at: 0)
-        playerCard4.image = cards.first
+        playerCard4.image = cards.first?.image
         playerCard4.isHidden = false
         }
         
@@ -179,7 +225,7 @@ class ViewController: UIViewController
         {
         self.playerCard5.layer.zPosition = 8
         cards.remove(at: 0)
-        playerCard5.image = cards.first
+        playerCard5.image = cards.first?.image
         playerCard5.isHidden = false
         }
         
