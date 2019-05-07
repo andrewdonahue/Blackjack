@@ -30,55 +30,91 @@ class ViewController: UIViewController
         playerCard5.isHidden = true
 
         //Numbering Cards
-        cards = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28, image29, image30, image31, image32, image33, image34, image35, image36, image37, image38, image39, image40, image41, image42, image43, image44, image45, image46, image47, image48, image49, image50, image51, image52] as! [UIImage]
+        cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52] as! [Card]
         
+        //2C, 2D, 2H, 2S
         let card1 = Card(image: image1!, v: 2)
         let card2 = Card(image: image2!, v: 2)
         let card3 = Card(image: image3!, v: 2)
         let card4 = Card(image: image4!, v: 2)
         
+        //3C, 3D, 3H, 3S
         let card5 = Card(image: image5!, v: 3)
         let card6 = Card(image: image6!, v: 3)
         let card7 = Card(image: image7!, v: 3)
         let card8 = Card(image: image8!, v: 3)
-
+        
+        //4C, 4D, 4H, 4S
         let card9 = Card(image: image9!, v: 4)
         let card10 = Card(image: image10!, v: 4)
         let card11 = Card(image: image11!, v: 4)
         let card12 = Card(image: image12!, v: 4)
-
+        
+        //5C, 5D, 5H, 5S
         let card13 = Card(image: image13!, v: 5)
         let card14 = Card(image: image14!, v: 5)
         let card15 = Card(image: image15!, v: 5)
         let card16 = Card(image: image16!, v: 5)
         
+        //6C, 6D, 6H, 6S
         let card17 = Card(image: image17!, v: 6)
         let card18 = Card(image: image18!, v: 6)
         let card19 = Card(image: image19!, v: 6)
         let card20 = Card(image: image20!, v: 6)
-
+        
+        //7C, 7D, 7H, 7S
         let card21 = Card(image: image21!, v: 7)
         let card22 = Card(image: image22!, v: 7)
         let card23 = Card(image: image23!, v: 7)
         let card24 = Card(image: image24!, v: 7)
-
+        
+        //8C, 8D, 8H, 8S
         let card25 = Card(image: image25!, v: 8)
         let card26 = Card(image: image26!, v: 8)
         let card27 = Card(image: image27!, v: 8)
         let card28 = Card(image: image28!, v: 8)
-
+        
+        //9C, 9D, 9H, 9S
         let card29 = Card(image: image29!, v: 9)
         let card30 = Card(image: image30!, v: 9)
         let card31 = Card(image: image31!, v: 9)
         let card32 = Card(image: image32!, v: 9)
         
-        let card33 = Card(image: image29!, v: 9)
-        let card34 = Card(image: image29!, v: 9)
-        let card35 = Card(image: image29!, v: 9)
-        let card36 = Card(image: image29!, v: 9)
-
+        //10C, 10D, 10H, 10S
+        let card33 = Card(image: image33!, v: 10)
+        let card34 = Card(image: image34!, v: 10)
+        let card35 = Card(image: image35!, v:10)
+        let card36 = Card(image: image36!, v: 10)
         
-
+        //Aces with value of 1...
+        let card37_1 = Card(image: image37!, v: 1)
+        let card38_1 = Card(image: image38!, v: 1)
+        let card39_1 = Card(image: image39!, v: 1)
+        let card40_1 = Card(image: image40!, v: 1)
+        
+        //Aces with value of 11...
+        let card37_11 = Card(image: image37!, v: 11)
+        let card38_11 = Card(image: image38!, v: 11)
+        let card39_11 = Card(image: image39!, v: 11)
+        let card40_11 = Card(image: image40!, v: 11)
+        
+        //JC, JD, JH, JS
+        let card41 = Card(image: image41!, v: 10)
+        let card42 = Card(image: image42!, v: 10)
+        let card43 = Card(image: image43!, v: 10)
+        let card44 = Card(image: image44!, v: 10)
+        
+        //KC, KD, KH, KS
+        let card45 = Card(image: image45!, v: 10)
+        let card46 = Card(image: image46!, v: 10)
+        let card47 = Card(image: image47!, v: 10)
+        let card48 = Card(image: image48!, v: 10)
+        
+        //QC, QD, QH, QS
+        let card49 = Card(image: image49!, v: 10)
+        let card50 = Card(image: image50!, v: 10)
+        let card51 = Card(image: image51!, v: 10)
+        let card52 = Card(image: image52!, v: 10)
 
     }
     
@@ -249,77 +285,82 @@ class ViewController: UIViewController
     {
         checkForWinner()
     }
+    
     //find who is winning
     func checkForWinner()
     {
-        let playerHand = playerCard1.tag + playerCard2.tag + playerCard3.tag + playerCard4.tag + playerCard5.tag
+        let playerHand =
+
         let dealerHand = dealerCard1.tag + dealerCard2.tag
         if playerHand > 21
         {
             let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
-            
+
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion: nil)
             })
-            
+
             newAlert.addAction(ok)
-            
+
             present(newAlert, animated: true, completion: nil)
         }
+    
         else if  playerHand == 21 && dealerHand != 21
         {
             let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
-            
+
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion: nil)
             })
-            
+
             newAlert.addAction(ok)
-            
+
             present(newAlert, animated: true, completion: nil)
         }
+    
         else if playerHand < 21 && dealerHand < 21
         {
             let playerScore = 21 - (playerCard1.tag + playerCard2.tag + playerCard3.tag + playerCard4.tag + playerCard5.tag)
             let dealerScore = 21 - (dealerCard1.tag + dealerCard2.tag)
-            
+
             if playerScore > dealerScore
             {
                 let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
-                
+
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
                 })
-                
+
                 newAlert.addAction(ok)
-                
+
                 present(newAlert, animated: true, completion: nil)
             }
+    
             else if playerScore == dealerScore
             {
                 let newAlert = UIAlertController(title: "You Tied!", message: "Better luck next time.", preferredStyle: .alert)
-                
+
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
                 })
-                
+
                 newAlert.addAction(ok)
-                
+
                 present(newAlert, animated: true, completion: nil)
             }
+    
             else if playerScore < dealerScore
             {
                 let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
-                
+
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
                 })
-                
+
                 newAlert.addAction(ok)
-                
+
                 present(newAlert, animated: true, completion: nil)
             }
         }
     }
 }
-
