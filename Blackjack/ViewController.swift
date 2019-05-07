@@ -30,158 +30,152 @@ class ViewController: UIViewController
         playerCard5.isHidden = true
     
         //Numbering Cards
-        cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52] as! [Card]
+        cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52] 
     }
     
     //2C, 2D, 2H, 2S
-    let card1 = Card(image: image1!, v: 2)
-    let card2 = Card(image: image2!, v: 2)
-    let card3 = Card(image: image3!, v: 2)
-    let card4 = Card(image: image4!, v: 2)
+    let card1 = Card(image: UIImage(named: "1-2C")!, v: 2)
+    let card2 = Card(image: UIImage(named: "2-2D")!, v: 2)
+    let card3 = Card(image: UIImage(named: "3-2S")!, v: 2)
+    let card4 = Card(image: UIImage(named: "4-2H")!, v: 2)
     
     //3C, 3D, 3H, 3S
-    let card5 = Card(image: image5!, v: 3)
-    let card6 = Card(image: image6!, v: 3)
-    let card7 = Card(image: image7!, v: 3)
-    let card8 = Card(image: image8!, v: 3)
+    let card5 = Card(image: UIImage(named: "5-3C")!, v: 3)
+    let card6 = Card(image: UIImage(named: "6-3D")!, v: 3)
+    let card7 = Card(image: UIImage(named: "7-3H")!, v: 3)
+    let card8 = Card(image: UIImage(named: "8-3S")!, v: 3)
     
     //4C, 4D, 4H, 4S
-    let card9 = Card(image: image9!, v: 4)
-    let card10 = Card(image: image10!, v: 4)
-    let card11 = Card(image: image11!, v: 4)
-    let card12 = Card(image: image12!, v: 4)
+    let card9 = Card(image: UIImage(named: "9-4C")!, v: 4)
+    let card10 = Card(image: UIImage(named: "10-4D")!, v: 4)
+    let card11 = Card(image: UIImage(named: "11-4H")!, v: 4)
+    let card12 = Card(image: UIImage(named: "12-4S")!, v: 4)
     
     //5C, 5D, 5H, 5S
-    let card13 = Card(image: image13!, v: 5)
-    let card14 = Card(image: image14!, v: 5)
-    let card15 = Card(image: image15!, v: 5)
-    let card16 = Card(image: image16!, v: 5)
+    let card13 = Card(image: UIImage(named: "13-5C")!, v: 5)
+    let card14 = Card(image: UIImage(named: "14-5D")!, v: 5)
+    let card15 = Card(image: UIImage(named: "15-5H")!, v: 5)
+    let card16 = Card(image: UIImage(named: "16-5S")!, v: 5)
     
     //6C, 6D, 6H, 6S
-    let card17 = Card(image: image17!, v: 6)
-    let card18 = Card(image: image18!, v: 6)
-    let card19 = Card(image: image19!, v: 6)
-    let card20 = Card(image: image20!, v: 6)
+    let card17 = Card(image: UIImage(named: "17-6C")!, v: 6)
+    let card18 = Card(image: UIImage(named: "18-6D")!, v: 6)
+    let card19 = Card(image: UIImage(named: "19-6H")!, v: 6)
+    let card20 = Card(image: UIImage(named: "20-6S")!, v: 6)
     
     //7C, 7D, 7H, 7S
-    let card21 = Card(image: image21!, v: 7)
-    let card22 = Card(image: image22!, v: 7)
-    let card23 = Card(image: image23!, v: 7)
-    let card24 = Card(image: image24!, v: 7)
+    let card21 = Card(image: UIImage(named: "21-7C")!, v: 7)
+    let card22 = Card(image: UIImage(named: "22-7D")!, v: 7)
+    let card23 = Card(image: UIImage(named: "23-7H")!, v: 7)
+    let card24 = Card(image: UIImage(named: "24-7S")!, v: 7)
     
     //8C, 8D, 8H, 8S
-    let card25 = Card(image: image25!, v: 8)
-    let card26 = Card(image: image26!, v: 8)
-    let card27 = Card(image: image27!, v: 8)
-    let card28 = Card(image: image28!, v: 8)
+    let card25 = Card(image: UIImage(named: "25-8C")!, v: 8)
+    let card26 = Card(image: UIImage(named: "26-8D")!, v: 8)
+    let card27 = Card(image: UIImage(named: "27-8H")!, v: 8)
+    let card28 = Card(image: UIImage(named: "28-8S")!, v: 8)
     
     //9C, 9D, 9H, 9S
-    let card29 = Card(image: image29!, v: 9)
-    let card30 = Card(image: image30!, v: 9)
-    let card31 = Card(image: image31!, v: 9)
-    let card32 = Card(image: image32!, v: 9)
+    let card29 = Card(image: UIImage(named: "29-9C")!, v: 9)
+    let card30 = Card(image: UIImage(named: "30-9D")!, v: 9)
+    let card31 = Card(image: UIImage(named: "31-9H")!, v: 9)
+    let card32 = Card(image: UIImage(named: "32-9S")!, v: 9)
     
     //10C, 10D, 10H, 10S
-    let card33 = Card(image: image33!, v: 10)
-    let card34 = Card(image: image34!, v: 10)
-    let card35 = Card(image: image35!, v:10)
-    let card36 = Card(image: image36!, v: 10)
+    let card33 = Card(image: UIImage(named: "33-10C")!, v: 10)
+    let card34 = Card(image: UIImage(named: "34-10D")!, v: 10)
+    let card35 = Card(image: UIImage(named: "35-10H")!, v:10)
+    let card36 = Card(image: UIImage(named: "36-10S")!, v: 10)
     
-    //Aces with value of 1...
-    let card37_1 = Card(image: image37!, v: 1)
-    let card38_1 = Card(image: image38!, v: 1)
-    let card39_1 = Card(image: image39!, v: 1)
-    let card40_1 = Card(image: image40!, v: 1)
-    
-    //Aces with value of 11...
-    let card37_11 = Card(image: image37!, v: 11)
-    let card38_11 = Card(image: image38!, v: 11)
-    let card39_11 = Card(image: image39!, v: 11)
-    let card40_11 = Card(image: image40!, v: 11)
-    
+    //AC, AD, AH, AS
+    let card37 = Card(image: UIImage(named: "37-AC")!, v: 1 | 11)
+    let card38 = Card(image: UIImage(named: "38-AD")!, v: 1 | 11)
+    let card39 = Card(image: UIImage(named: "39-AH")!, v: 1 | 11)
+    let card40 = Card(image: UIImage(named: "40-AS")!, v: 1 | 11)
+   
     //JC, JD, JH, JS
-    let card41 = Card(image: image41!, v: 10)
-    let card42 = Card(image: image42!, v: 10)
-    let card43 = Card(image: image43!, v: 10)
-    let card44 = Card(image: image44!, v: 10)
+    let card41 = Card(image: UIImage(named: "41-JC")!, v: 10)
+    let card42 = Card(image: UIImage(named: "42-JD")!, v: 10)
+    let card43 = Card(image: UIImage(named: "43-JH")!, v: 10)
+    let card44 = Card(image: UIImage(named: "44-JS")!, v: 10)
     
     //KC, KD, KH, KS
-    let card45 = Card(image: image45!, v: 10)
-    let card46 = Card(image: image46!, v: 10)
-    let card47 = Card(image: image47!, v: 10)
-    let card48 = Card(image: image48!, v: 10)
+    let card45 = Card(image: UIImage(named: "45-KC")!, v: 10)
+    let card46 = Card(image: UIImage(named: "46-KD")!, v: 10)
+    let card47 = Card(image: UIImage(named: "47-KH")!, v: 10)
+    let card48 = Card(image: UIImage(named: "48-KS")!, v: 10)
     
     //QC, QD, QH, QS
-    let card49 = Card(image: image49!, v: 10)
-    let card50 = Card(image: image50!, v: 10)
-    let card51 = Card(image: image51!, v: 10)
-    let card52 = Card(image: image52!, v: 10)
+    let card49 = Card(image: UIImage(named: "49-QC")!, v: 10)
+    let card50 = Card(image: UIImage(named: "50-QD")!, v: 10)
+    let card51 = Card(image: UIImage(named: "51-QH")!, v: 10)
+    let card52 = Card(image: UIImage(named: "52-QS")!, v: 10)
 
-    //Making image assets variables
-    var image1 = UIImage(named: "1-2C")
-    var image2 = UIImage(named: "2-2D")
-    var image3 = UIImage(named: "3-2S")
-    var image4 = UIImage(named: "4-2H")
-    
-    var image5 = UIImage(named: "5-3C")
-    var image6 = UIImage(named: "6-3D")
-    var image7 = UIImage(named: "7-3H")
-    var image8 = UIImage(named: "8-3S")
-    
-    var image9 = UIImage(named: "9-4C")
-    var image10 = UIImage(named: "10-4D")
-    var image11 = UIImage(named: "11-4H")
-    var image12 = UIImage(named: "12-4S")
-    
-    var image13 = UIImage(named: "13-5C")
-    var image14 = UIImage(named: "14-5D")
-    var image15 = UIImage(named: "15-5H")
-    var image16 = UIImage(named: "16-5S")
-    
-    var image17 = UIImage(named: "17-6C")
-    var image18 = UIImage(named: "18-6D")
-    var image19 = UIImage(named: "19-6H")
-    var image20 = UIImage(named: "20-6S")
-    
-    var image21 = UIImage(named: "21-7C")
-    var image22 = UIImage(named: "22-7D")
-    var image23 = UIImage(named: "23-7H")
-    var image24 = UIImage(named: "24-7S")
-    
-    var image25 = UIImage(named: "25-8C")
-    var image26 = UIImage(named: "26-8D")
-    var image27 = UIImage(named: "27-8H")
-    var image28 = UIImage(named: "28-8S")
-    
-    var image29 = UIImage(named: "29-9C")
-    var image30 = UIImage(named: "30-9D")
-    var image31 = UIImage(named: "31-9H")
-    var image32 = UIImage(named: "32-9S")
-    
-    var image33 = UIImage(named: "33-10C")
-    var image34 = UIImage(named: "34-10D")
-    var image35 = UIImage(named: "35-10H")
-    var image36 = UIImage(named: "36-10S")
-    
-    var image37 = UIImage(named: "37-AC")
-    var image38 = UIImage(named: "38-AD")
-    var image39 = UIImage(named: "39-AH")
-    var image40 = UIImage(named: "40-AS")
-    
-    var image41 = UIImage(named: "41-JC")
-    var image42 = UIImage(named: "42-JD")
-    var image43 = UIImage(named: "43-JH")
-    var image44 = UIImage(named: "44-JS")
-    
-    var image45 = UIImage(named: "45-KC")
-    var image46 = UIImage(named: "46-KD")
-    var image47 = UIImage(named: "47-KH")
-    var image48 = UIImage(named: "48-KS")
-    
-    var image49 = UIImage(named: "49-QC")
-    var image50 = UIImage(named: "50-QD")
-    var image51 = UIImage(named: "51-QH")
-    var image52 = UIImage(named: "52-QS")
+//    //Making image assets variables
+//    var image1 = UIImage(named: "1-2C")
+//    var image2 = UIImage(named: "2-2D")
+//    var image3 = UIImage(named: "3-2S")
+//    var image4 = UIImage(named: "4-2H")
+//
+//    var image5 = UIImage(named: "5-3C")
+//    var image6 = UIImage(named: "6-3D")
+//    var image7 = UIImage(named: "7-3H")
+//    var image8 = UIImage(named: "8-3S")
+//
+//    var image9 = UIImage(named: "9-4C")
+//    var image10 = UIImage(named: "10-4D")
+//    var image11 = UIImage(named: "11-4H")
+//    var image12 = UIImage(named: "12-4S")
+//
+//    var image13 = UIImage(named: "13-5C")
+//    var image14 = UIImage(named: "14-5D")
+//    var image15 = UIImage(named: "15-5H")
+//    var image16 = UIImage(named: "16-5S")
+//
+//    var image17 = UIImage(named: "17-6C")
+//    var image18 = UIImage(named: "18-6D")
+//    var image19 = UIImage(named: "19-6H")
+//    var image20 = UIImage(named: "20-6S")
+//
+//    var image21 = UIImage(named: "21-7C")
+//    var image22 = UIImage(named: "22-7D")
+//    var image23 = UIImage(named: "23-7H")
+//    var image24 = UIImage(named: "24-7S")
+//
+//    var image25 = UIImage(named: "25-8C")
+//    var image26 = UIImage(named: "26-8D")
+//    var image27 = UIImage(named: "27-8H")
+//    var image28 = UIImage(named: "28-8S")
+//
+//    var image29 = UIImage(named: "29-9C")
+//    var image30 = UIImage(named: "30-9D")
+//    var image31 = UIImage(named: "31-9H")
+//    var image32 = UIImage(named: "32-9S")
+//
+//    var image33 = UIImage(named: "33-10C")
+//    var image34 = UIImage(named: "34-10D")
+//    var image35 = UIImage(named: "35-10H")
+//    var image36 = UIImage(named: "36-10S")
+//
+//    var image37 = UIImage(named: "37-AC")
+//    var image38 = UIImage(named: "38-AD")
+//    var image39 = UIImage(named: "39-AH")
+//    var image40 = UIImage(named: "40-AS")
+//
+//    var image41 = UIImage(named: "41-JC")
+//    var image42 = UIImage(named: "42-JD")
+//    var image43 = UIImage(named: "43-JH")
+//    var image44 = UIImage(named: "44-JS")
+//
+//    var image45 = UIImage(named: "45-KC")
+//    var image46 = UIImage(named: "46-KD")
+//    var image47 = UIImage(named: "47-KH")
+//    var image48 = UIImage(named: "48-KS")
+//
+//    var image49 = UIImage(named: "49-QC")
+//    var image50 = UIImage(named: "50-QD")
+//    var image51 = UIImage(named: "51-QH")
+//    var image52 = UIImage(named: "52-QS")
     
    
     
