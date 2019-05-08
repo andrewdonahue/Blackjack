@@ -20,6 +20,8 @@ class ViewController: UIViewController
     @IBOutlet weak var playerCard5: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     var cards: [Card] = [Card]()
+    var playerCards: [Card] = [Card]()
+    var dealerCards: [Card] = [Card]()
     
     override func viewDidLoad()
     {
@@ -282,9 +284,19 @@ class ViewController: UIViewController
     //find who is winning
     func checkForWinner()
     {
-        let playerHand =
+        var playerHand = 0
+        for card in playerCards
+        {
+            playerHand += card.value
+        }
+        
 
-        let dealerHand = dealerCard1.tag + dealerCard2.tag
+        var dealerHand = 0
+        for card in dealerCards
+        {
+            dealerHand += card.value
+        }
+        
         if playerHand > 21
         {
             let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
@@ -313,10 +325,8 @@ class ViewController: UIViewController
     
         else if playerHand < 21 && dealerHand < 21
         {
-            let playerScore = 21 - (playerCard1.tag + playerCard2.tag + playerCard3.tag + playerCard4.tag + playerCard5.tag)
-            let dealerScore = 21 - (dealerCard1.tag + dealerCard2.tag)
 
-            if playerScore > dealerScore
+            if playerHand > dealerHand
             {
                 let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
 
@@ -329,7 +339,7 @@ class ViewController: UIViewController
                 present(newAlert, animated: true, completion: nil)
             }
     
-            else if playerScore == dealerScore
+            else if playerHand == dealerHand
             {
                 let newAlert = UIAlertController(title: "You Tied!", message: "Better luck next time.", preferredStyle: .alert)
 
@@ -342,7 +352,7 @@ class ViewController: UIViewController
                 present(newAlert, animated: true, completion: nil)
             }
     
-            else if playerScore < dealerScore
+            else if playerHand < dealerHand
             {
                 let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
 
