@@ -18,7 +18,6 @@ class ViewController: UIViewController
     @IBOutlet weak var playerCard3: UIImageView!
     @IBOutlet weak var playerCard4: UIImageView!
     @IBOutlet weak var playerCard5: UIImageView!
-    @IBOutlet weak var scoreLabel: UILabel!
     var cards: [Card] = [Card]()
     var playerCards: [Card] = [Card]()
     var dealerCards: [Card] = [Card]()
