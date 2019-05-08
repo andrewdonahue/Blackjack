@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leatherCropped" translatesAutoresizingMaskIntoConstraints="NO" id="2Yq-ek-Uv4">
-                                <rect key="frame" x="-1" y="-3" width="376" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leatherCropped" translatesAutoresizingMaskIntoConstraints="NO" id="2Yq-ek-Uv4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeB-uG-JFV">
                                 <rect key="frame" x="0.0" y="150" width="239" height="195"/>
@@ -110,7 +109,7 @@
                                 <rect key="frame" x="278" y="448" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-z8-8Aw">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-z8-8Aw">
                                 <rect key="frame" x="-3" y="80" width="380" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.17254901959999999" blue="0.098039215690000001" alpha="0.69935252569999995" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,6 +117,7 @@
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Round Start">
                                     <color key="titleColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="titleShadowColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
                                     <action selector="RSTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="22q-bW-A0t"/>
@@ -141,6 +141,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Yq-ek-Uv4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8hm-vh-isl"/>
+                            <constraint firstItem="2Yq-ek-Uv4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Mqq-Vt-vke"/>
+                            <constraint firstItem="2Yq-ek-Uv4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hKb-e6-nXp"/>
+                            <constraint firstItem="2Yq-ek-Uv4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zbL-ma-Zbs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
