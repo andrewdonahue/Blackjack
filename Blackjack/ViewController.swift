@@ -175,23 +175,23 @@ class ViewController: UIViewController
         self.playerCard3.layer.zPosition = 6
         self.playerCard2.frame.origin.x -= 65
         playerCard3.isHidden = false
-        playerCards.append(cards.remove(at: 0))
         playerCard3.image = cards.first?.image
+        playerCards.append(cards.remove(at: 0))
         }
         
       else if counter == 2
         {
         self.playerCard4.layer.zPosition = 7
-        playerCards.append(cards.remove(at: 0))
         playerCard4.image = cards.first?.image
+        playerCards.append(cards.remove(at: 0))
         playerCard4.isHidden = false
         }
         
       else if counter == 3
         {
         self.playerCard5.layer.zPosition = 8
-        playerCards.append(cards.remove(at: 0))
         playerCard5.image = cards.first?.image
+        playerCards.append(cards.remove(at: 0))
         playerCard5.isHidden = false
         }
         
@@ -224,16 +224,15 @@ class ViewController: UIViewController
         {
             playerHand += card.value
         }
-//        print("player has \(playerCards.count)")
+        print("player has \(playerCards.count)")
         
 
         var dealerHand = 0
         for card in dealerCards
         {
             dealerHand += card.value
-            
-            
         }
+         print("dealer has \(dealerCards.count)")
         print(playerHand)
         print(dealerHand)
         if playerHand > 21
