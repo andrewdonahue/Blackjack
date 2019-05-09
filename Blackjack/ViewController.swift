@@ -116,7 +116,20 @@ class ViewController: UIViewController
     let card51 = Card(image: UIImage(named: "51-QH")!, v: 10)
     let card52 = Card(image: UIImage(named: "52-QS")!, v: 10)
 
-    //Func to shuffle cards at round start
+    //Func to shuffle cards at round start & Flip function
+    func flip()
+    {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIImageView.transition(with: dealerCoverCard, duration: 1.0, options: transitionOptions, animations: {
+            self.dealerCoverCard.isHidden = true
+        })
+        
+        UIImageView.transition(with: dealerCard2, duration: 1.0, options: transitionOptions, animations: {
+            self.dealerCard2.isHidden = false
+        })
+    }
+    //
     func roundBegin()
     {
         playerCards.removeAll()
@@ -167,6 +180,7 @@ class ViewController: UIViewController
     @IBAction func RSTapped(_ sender: UIButton)
     {
         roundBegin()
+        flip()
     }
     
     //"Hit" button tapped...
@@ -215,6 +229,7 @@ class ViewController: UIViewController
 
             present(newAlert, animated: true, completion: nil)
         }
+        
     }
     
     //"Stand" button tapped...
