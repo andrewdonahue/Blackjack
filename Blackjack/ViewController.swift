@@ -123,6 +123,7 @@ class ViewController: UIViewController
         dealerCards.removeAll()
         counter = 0
         
+        
         if playerCard3.isHidden == false
         {
             self.playerCard3.isHidden = true
@@ -231,6 +232,7 @@ class ViewController: UIViewController
             playerHand += card.value
         }
         print("player has \(playerCards.count)")
+        playerValueLabel.text = "\(playerHand)"
         
 
         var dealerHand = 0
@@ -298,7 +300,7 @@ class ViewController: UIViewController
     
             else if playerHand > dealerHand
             {
-                let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
+                let newAlert = UIAlertController(title: "You Win!", message: "Nice job!", preferredStyle: .alert)
 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
