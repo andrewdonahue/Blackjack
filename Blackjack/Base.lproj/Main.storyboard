@@ -204,16 +204,18 @@
                     <connections>
                         <outlet property="dealerCard1" destination="kBk-xE-aaF" id="LIA-9y-29P"/>
                         <outlet property="dealerCard2" destination="331-kb-jyD" id="dTQ-rE-9ZE"/>
+                        <outlet property="dealerValueLabel" destination="S3V-zm-gRN" id="qb7-pj-9SE"/>
                         <outlet property="playerCard1" destination="bYw-ft-uDa" id="8FO-md-6lD"/>
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
                         <outlet property="playerCard3" destination="9UU-b1-u3O" id="aMq-gQ-X3d"/>
                         <outlet property="playerCard4" destination="0hY-bc-Ra7" id="7BV-aG-8oP"/>
                         <outlet property="playerCard5" destination="knb-bI-DB8" id="42h-0a-6kN"/>
+                        <outlet property="playerValueLabel" destination="6lq-8w-0LP" id="PJW-WE-agS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80.799999999999997" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="-30" y="107"/>
         </scene>
     </scenes>
     <resources>
