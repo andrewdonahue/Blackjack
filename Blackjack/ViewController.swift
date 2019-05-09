@@ -24,6 +24,8 @@ class ViewController: UIViewController
     var cards: [Card] = [Card]()
     var playerCards: [Card] = [Card]()
     var dealerCards: [Card] = [Card]()
+    var playerHand = 0
+    var dealerHand = 0
     
     override func viewDidLoad()
     {
@@ -122,7 +124,7 @@ class ViewController: UIViewController
         playerCards.removeAll()
         dealerCards.removeAll()
         counter = 0
-        
+        playerValueLabel.text = "\(playerHand)"
         
         if playerCard3.isHidden == false
         {
@@ -217,16 +219,9 @@ class ViewController: UIViewController
         }
     }
     
-    //"Stand" button tapped...
-    @IBAction func standTapped(_ sender: UIButton)
-    {
-        checkForWinner()
-    }
-    
     //find who is winning
     func checkForWinner()
     {
-        var playerHand = 0
         for card in playerCards
         {
             playerHand += card.value
@@ -234,8 +229,6 @@ class ViewController: UIViewController
         print("player has \(playerCards.count)")
         playerValueLabel.text = "\(playerHand)"
         
-
-        var dealerHand = 0
         for card in dealerCards
         {
             dealerHand += card.value
@@ -310,6 +303,20 @@ class ViewController: UIViewController
 
                 present(newAlert, animated: true, completion: nil)
             }
+        }
+    }
+    //"Stand" button tapped...
+    @IBAction func standTapped(_ sender: UIButton)
+    {
+        dealerCoverCard.isHidden = true
+        
+        if dealerHand >= 17
+        {
+            checkForWinner()
+        }
+        else if dealerHand < 17
+        {
+            //dealer hit
         }
     }
 }
