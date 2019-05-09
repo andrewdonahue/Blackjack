@@ -305,6 +305,5 @@ class ViewController: UIViewController
                 present(newAlert, animated: true, completion: nil)
             }
         }
-
     }
 }
