@@ -296,7 +296,7 @@ class ViewController: UIViewController
     
             else if playerHand > dealerHand
             {
-                let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
+                let newAlert = UIAlertController(title: "You Win!", message: "Nice job!", preferredStyle: .alert)
 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
