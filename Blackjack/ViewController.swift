@@ -13,6 +13,7 @@ class ViewController: UIViewController
 {
     @IBOutlet weak var dealerCard1: UIImageView!
     @IBOutlet weak var dealerCard2: UIImageView!
+    @IBOutlet weak var dealerCoverCard: UIImageView!
     @IBOutlet weak var playerCard1: UIImageView!
     @IBOutlet weak var playerCard2: UIImageView!
     @IBOutlet weak var playerCard3: UIImageView!
@@ -150,10 +151,13 @@ class ViewController: UIViewController
         cards.shuffle()
         playerCard1.image = cards.first?.image
         playerCards.append(cards.remove(at: 0))
+        
         playerCard2.image = cards.first?.image
         playerCards.append(cards.remove(at: 0))
+        
         dealerCard1.image = cards.first?.image
         dealerCards.append(cards.remove(at: 0))
+        
         dealerCard2.image = cards.first?.image
         dealerCards.append(cards.remove(at: 0))
         }
