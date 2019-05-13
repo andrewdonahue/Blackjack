@@ -34,6 +34,7 @@ class ViewController: UIViewController
         playerCard3.isHidden = true
         playerCard4.isHidden = true
         playerCard5.isHidden = true
+        dealerCard2.isHidden = true
     
         //Numbering Cards
         cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52]
@@ -118,9 +119,20 @@ class ViewController: UIViewController
     let card51 = Card(image: UIImage(named: "51-QH")!, v: 10)
     let card52 = Card(image: UIImage(named: "52-QS")!, v: 10)
 
-    //Func to shuffle cards at round start
+    //Func to shuffle cards at round start & Flip function
+    func flip()
+    {
+        UIImageView.transition(with: dealerCoverCard,
+                          duration: 0.75,
+                          options: .transitionFlipFromRight,
+                          animations: { self.dealerCoverCard.image = self.dealerCard2.image},
+                          completion: nil)
+    }
+    
+    //Round Begins...
     func roundBegin()
     {
+     
         playerCards.removeAll()
         dealerCards.removeAll()
         counter = 0
@@ -163,6 +175,7 @@ class ViewController: UIViewController
         
         dealerCard2.image = cards.first?.image
         dealerCards.append(cards.remove(at: 0))
+        
         }
     
     //"Round Start" button tapped...
@@ -218,6 +231,7 @@ class ViewController: UIViewController
 
             present(newAlert, animated: true, completion: nil)
         }
+        
     }
     
     //find who is winning
@@ -309,7 +323,7 @@ class ViewController: UIViewController
     //"Stand" button tapped...
     @IBAction func standTapped(_ sender: UIButton)
     {
-        dealerCoverCard.isHidden = true
+        flip()
         
         if dealerHand >= 17
         {
