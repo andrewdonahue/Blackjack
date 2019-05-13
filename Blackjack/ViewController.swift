@@ -132,7 +132,7 @@ class ViewController: UIViewController
     //Round Begins...
     func roundBegin()
     {
-     
+        dealerCoverCard.isHidden = false
         playerCards.removeAll()
         dealerCards.removeAll()
         counter = 0
