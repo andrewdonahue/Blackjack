@@ -175,7 +175,7 @@ class ViewController: UIViewController
         
         dealerCard2.image = cards.first?.image
         dealerCards.append(cards.remove(at: 0))
-        
+    
         }
     
     //"Round Start" button tapped...
