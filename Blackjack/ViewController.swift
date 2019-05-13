@@ -132,7 +132,7 @@ class ViewController: UIViewController
     //Round Begins...
     func roundBegin()
     {
-     
+        dealerCoverCard.isHidden = false
         playerCards.removeAll()
         dealerCards.removeAll()
         counter = 0
@@ -190,6 +190,7 @@ class ViewController: UIViewController
     @IBAction func hitTapped(_ sender: UIButton)
     {
       counter = counter + 1
+      playerValueLabel.text = "\(playerHand)"
         
       if counter == 1
         {
