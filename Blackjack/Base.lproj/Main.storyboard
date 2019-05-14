@@ -191,6 +191,14 @@
                                 <rect key="frame" x="125" y="203" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="34-10D" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-Bv-ZhW">
+                                <rect key="frame" x="78" y="203" width="83" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="34-10D" translatesAutoresizingMaskIntoConstraints="NO" id="NLQ-oE-FKD">
+                                <rect key="frame" x="105" y="203" width="83" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -204,25 +212,30 @@
                     <connections>
                         <outlet property="dealerCard1" destination="kBk-xE-aaF" id="LIA-9y-29P"/>
                         <outlet property="dealerCard2" destination="331-kb-jyD" id="dTQ-rE-9ZE"/>
+                        <outlet property="dealerCard3" destination="Uxz-Bv-ZhW" id="EQz-87-APj"/>
+                        <outlet property="dealerCard4" destination="NLQ-oE-FKD" id="BfQ-Ls-Kxh"/>
                         <outlet property="dealerCoverCard" destination="U8c-Ts-Gxz" id="3sv-FJ-Hxs"/>
                         <outlet property="dealerValueLabel" destination="S3V-zm-gRN" id="qb7-pj-9SE"/>
+                        <outlet property="hitButton" destination="kLV-Y7-Tt7" id="8me-IX-Sf4"/>
                         <outlet property="playerCard1" destination="bYw-ft-uDa" id="8FO-md-6lD"/>
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
                         <outlet property="playerCard3" destination="9UU-b1-u3O" id="aMq-gQ-X3d"/>
                         <outlet property="playerCard4" destination="0hY-bc-Ra7" id="7BV-aG-8oP"/>
                         <outlet property="playerCard5" destination="knb-bI-DB8" id="42h-0a-6kN"/>
                         <outlet property="playerValueLabel" destination="6lq-8w-0LP" id="PJW-WE-agS"/>
+                        <outlet property="standButton" destination="x5u-fX-3ch" id="1It-ho-6HI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-457" y="96"/>
+            <point key="canvasLocation" x="-668" y="-59"/>
         </scene>
     </scenes>
     <resources>
         <image name="1-2C" width="165.83999633789062" height="253.44000244140625"/>
         <image name="10-4D" width="165.83999633789062" height="253.44000244140625"/>
         <image name="14-5D" width="165.83999633789062" height="253.44000244140625"/>
+        <image name="34-10D" width="165.83999633789062" height="253.44000244140625"/>
         <image name="8-3S" width="165.83999633789062" height="253.44000244140625"/>
         <image name="gray_back" width="165.83999633789062" height="253.44000244140625"/>
         <image name="leatherCropped" width="349" height="620"/>
