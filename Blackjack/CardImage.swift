@@ -9,8 +9,9 @@
 import UIKit
 
 
-class Card {
-    
+class Card
+
+{
     var image: UIImage
     
     var value: Int
@@ -20,10 +21,4 @@ class Card {
         self.image = image
         value = v
     }
-
-    
-    
-
-    
-
 }

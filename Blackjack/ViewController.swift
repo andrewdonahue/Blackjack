@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController
 
 {
+    //Outlets:
     @IBOutlet weak var dealerCard1: UIImageView!
     @IBOutlet weak var dealerCard2: UIImageView!
     @IBOutlet weak var dealerCard3: UIImageView!
@@ -25,19 +26,28 @@ class ViewController: UIViewController
     @IBOutlet weak var playerValueLabel: UILabel!
     @IBOutlet weak var hitButton: UIButton!
     @IBOutlet weak var standButton: UIButton!
+    
+    //Variables:
     var cards: [Card] = [Card]()
     var playerCards: [Card] = [Card]()
     var dealerCards: [Card] = [Card]()
     var playerHand = 0
     var dealerHand = 0
+    var GamesPlayedCount = 0
     
     override func viewDidLoad()
     {
-        //Hiding "Hit" ImageViews
+        playerValueLabel.text = "\(playerHand)"
+        dealerValueLabel.text = "?"
+        
         super.viewDidLoad()
+        
+        //Hiding the Hit Cards
+        
         playerCard3.isHidden = true
         playerCard4.isHidden = true
         playerCard5.isHidden = true
+        
         dealerCard2.isHidden = true
         dealerCard3.isHidden = true
         dealerCard4.isHidden = true
@@ -45,8 +55,10 @@ class ViewController: UIViewController
         hitButton.isUserInteractionEnabled = true
         standButton.isUserInteractionEnabled = true
     
-        //Numbering Cards
+        //Cards Array:
+        
         cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52]
+        
         roundBegin()
     }
     
@@ -128,7 +140,8 @@ class ViewController: UIViewController
     let card51 = Card(image: UIImage(named: "51-QH")!, v: 10)
     let card52 = Card(image: UIImage(named: "52-QS")!, v: 10)
 
-    //Func to shuffle cards at round start & Flip function
+    //Flip Function
+    
     func flip()
     {
         UIImageView.transition(with: dealerCoverCard,
@@ -141,10 +154,13 @@ class ViewController: UIViewController
         dealerHits()
     }
     
-    //Round Begins...
+    //Round Begin Function
+    
     func roundBegin()
     {
         dealerCoverCard.isHidden = false
+        dealerCard3.isHidden = true
+        dealerCard4.isHidden = true
         playerCards.removeAll()
         dealerCards.removeAll()
         counter = 0
@@ -171,11 +187,15 @@ class ViewController: UIViewController
         playerCard4.isHidden = true
         playerCard5.isHidden = true
         
-        if cards.count < 8
+        if cards.count > 8
         {
-    //
+            
         }
+        
+    //Shuffle Function
+        
         cards.shuffle()
+        
         playerCard1.image = cards.first?.image
         playerCards.append(cards.remove(at: 0))
         
@@ -195,9 +215,10 @@ class ViewController: UIViewController
         playerCards.append(cards.remove(at: 0))
     
         dealerCoverCard.image = UIImage(named: "gray_back")
-        
+       
         }
-    //dealerHits func
+    
+    //Dealer Hits Function
     
     func dealerHits()
     {
@@ -246,13 +267,22 @@ class ViewController: UIViewController
         }
     }
     
-    //"Round Start" button tapped...
+    //Round Start Button Tapped
+    
     @IBAction func RSTapped(_ sender: UIButton)
     {
+        playerValueLabel.text = "\(playerHand)"
+
+        if GamesPlayedCount > 0
+        {
+        self.dealerCoverCard.frame.origin.x += 65
+        }
         roundBegin()
+        playerValueLabel.text = "\(playerHand)"
     }
     
-    //"Hit" button tapped...
+    //Hit Button Tapped
+    
     var counter = 0
     
     @IBAction func hitTapped(_ sender: UIButton)
@@ -268,6 +298,7 @@ class ViewController: UIViewController
         playerCard3.isHidden = false
         playerCard3.image = cards.first?.image
         playerCards.append(cards.remove(at: 0))
+        playerValueLabel.text = "\(playerHand)"
         }
         
       else if counter == 2
@@ -276,6 +307,7 @@ class ViewController: UIViewController
         playerCard4.image = cards.first?.image
         playerCards.append(cards.remove(at: 0))
         playerCard4.isHidden = false
+        playerValueLabel.text = "\(playerHand)"
         }
         
       else if counter == 3
@@ -284,11 +316,13 @@ class ViewController: UIViewController
         playerCard5.image = cards.first?.image
         playerCards.append(cards.remove(at: 0))
         playerCard5.isHidden = false
+        playerValueLabel.text = "\(playerHand)"
         }
         
      else
         {
             //Trigger Alert
+            
             let newAlert = UIAlertController(title: "Error", message: "Maximum number of hits has been reached.", preferredStyle: .alert)
 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
@@ -298,13 +332,16 @@ class ViewController: UIViewController
             newAlert.addAction(ok)
 
             present(newAlert, animated: true, completion: nil)
+            playerValueLabel.text = "\(playerHand)"
         }
         
     }
     
-    //find who is winning
+    //Check For Winner Function
+    
     func checkForWinner()
     {
+        
         for card in playerCards
         {
             playerHand += card.value
@@ -317,20 +354,23 @@ class ViewController: UIViewController
         {
             dealerHand += card.value
         }
-         print("dealer has \(dealerCards.count)")
+        print("dealer has \(dealerCards.count)")
         print(playerHand)
         print(dealerHand)
+        
         if playerHand > 21
         {
             let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
-                newAlert.dismiss(animated: true, completion: nil)
+                newAlert.dismiss(animated: true, completion:nil)
             })
 
             newAlert.addAction(ok)
 
             present(newAlert, animated: true, completion: nil)
+            
+            GamesPlayedCount += 1
         }
     
         else if  playerHand == 21 && dealerHand != 21
@@ -344,6 +384,8 @@ class ViewController: UIViewController
             newAlert.addAction(ok)
 
             present(newAlert, animated: true, completion: nil)
+            
+            GamesPlayedCount += 1
         }
     
         else if playerHand < 21 && dealerHand < 21
@@ -360,6 +402,8 @@ class ViewController: UIViewController
                 newAlert.addAction(ok)
 
                 present(newAlert, animated: true, completion: nil)
+                
+                GamesPlayedCount += 1
             }
     
             else if playerHand == dealerHand
@@ -373,6 +417,8 @@ class ViewController: UIViewController
                 newAlert.addAction(ok)
 
                 present(newAlert, animated: true, completion: nil)
+                
+                GamesPlayedCount += 1
             }
     
             else if playerHand > dealerHand
@@ -386,10 +432,14 @@ class ViewController: UIViewController
                 newAlert.addAction(ok)
 
                 present(newAlert, animated: true, completion: nil)
+                
+                GamesPlayedCount += 1
             }
         }
     }
-    //"Stand" button tapped...
+    
+    //Stand Button Tapped
+    
     @IBAction func standTapped(_ sender: UIButton)
     {
         flip()
@@ -400,7 +450,7 @@ class ViewController: UIViewController
         }
         else if dealerHand < 17
         {
-            //dealer hit
+            //[dealer continues hitting]
         }
     }
 }
