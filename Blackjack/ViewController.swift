@@ -341,7 +341,6 @@ class ViewController: UIViewController
     
     func checkForWinner()
     {
-        
         for card in playerCards
         {
             playerHand += card.value
