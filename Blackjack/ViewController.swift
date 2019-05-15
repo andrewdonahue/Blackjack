@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController
 
+
+
 {
     //Outlets:
     @IBOutlet weak var dealerCard1: UIImageView!
@@ -36,6 +38,7 @@ class ViewController: UIViewController
     var GamesPlayedCount = 0
     
     override func viewDidLoad()
+        
     {
         playerValueLabel.text = "\(playerHand)"
         dealerValueLabel.text = "?"
@@ -187,11 +190,6 @@ class ViewController: UIViewController
         playerCard4.isHidden = true
         playerCard5.isHidden = true
         
-        if cards.count > 8
-        {
-            
-        }
-        
     //Shuffle Function
         
         cards.shuffle()
@@ -271,8 +269,6 @@ class ViewController: UIViewController
     
     @IBAction func RSTapped(_ sender: UIButton)
     {
-        playerValueLabel.text = "\(playerHand)"
-
         if GamesPlayedCount > 0
         {
         self.dealerCoverCard.frame.origin.x += 65
@@ -452,4 +448,7 @@ class ViewController: UIViewController
             //[dealer continues hitting]
         }
     }
+    
 }
+
+
