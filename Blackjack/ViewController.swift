@@ -207,10 +207,10 @@ class ViewController: UIViewController
         dealerCards.append(cards.remove(at: 0))
         
         dealerCard3.image = cards.first?.image
-        playerCards.append(cards.remove(at: 0))
+        dealerCards.append(cards.remove(at: 0))
         
         dealerCard4.image = cards.first?.image
-        playerCards.append(cards.remove(at: 0))
+        dealerCards.append(cards.remove(at: 0))
     
         dealerCoverCard.image = UIImage(named: "gray_back")
        
@@ -222,7 +222,7 @@ class ViewController: UIViewController
     {
         var seconds = 0
         
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             seconds += 1
         
             if seconds == 2
@@ -258,6 +258,7 @@ class ViewController: UIViewController
         if dealerHand >= 17
         {
             checkForWinner()
+            //stop timer
         }
         else
         {
