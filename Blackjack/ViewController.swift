@@ -7,11 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class ViewController: UIViewController
-
-
-
 {
     //Outlets:
     @IBOutlet weak var dealerCard1: UIImageView!
@@ -36,14 +35,17 @@ class ViewController: UIViewController
     var playerHand = 0
     var dealerHand = 0
     var GamesPlayedCount = 0
+    var player: AVAudioPlayer?
     
     override func viewDidLoad()
-        
+    
     {
+        MusicHelper.sharedHelper.playBackgroundMusic()
         playerValueLabel.text = "\(playerHand)"
         dealerValueLabel.text = "?"
         
         super.viewDidLoad()
+    
         
         //Hiding the Hit Cards
         
@@ -448,6 +450,7 @@ class ViewController: UIViewController
         {
             //[dealer continues hitting]
         }
+        
     }
     
 }
