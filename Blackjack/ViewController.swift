@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
-import AVKit
 
 class ViewController: UIViewController
 {
@@ -35,12 +33,10 @@ class ViewController: UIViewController
     var playerHand = 0
     var dealerHand = 0
     var GamesPlayedCount = 0
-    var player: AVAudioPlayer?
     
     override func viewDidLoad()
     
     {
-        MusicHelper.sharedHelper.playBackgroundMusic()
         playerValueLabel.text = "\(playerHand)"
         dealerValueLabel.text = "?"
         
@@ -224,7 +220,7 @@ class ViewController: UIViewController
     {
         var seconds = 0
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        let seconds = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             seconds += 1
         
             if seconds == 2
