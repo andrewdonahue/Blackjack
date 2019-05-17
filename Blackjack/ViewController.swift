@@ -342,7 +342,6 @@ class ViewController: UIViewController
         }
         print("player has \(playerCards.count)")
         playerValueLabel.text = "\(playerHand)"
-        dealerValueLabel.text = "\(dealerHand)"
         
         for card in dealerCards
         {
@@ -351,6 +350,8 @@ class ViewController: UIViewController
         print("dealer has \(dealerCards.count)")
         print(playerHand)
         print(dealerHand)
+        
+        dealerValueLabel.text = "\(dealerHand)"
         
         if playerHand > 21
         {
