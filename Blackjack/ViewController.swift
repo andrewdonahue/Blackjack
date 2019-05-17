@@ -238,7 +238,7 @@ class ViewController: UIViewController
                         self.dealerCoverCard.layer.zPosition = 5
                         self.dealerCoverCard.frame.origin.x -= 65
                     }
-                    else if self.dealerHand >= 17
+                    if self.dealerHand >= 17
                     {
                         timer.invalidate()
                         self.checkForWinner()
@@ -285,7 +285,7 @@ class ViewController: UIViewController
     {
         if GamesPlayedCount > 0
         {
-        self.dealerCoverCard.frame.origin.x += 65
+        self.dealerCoverCard.frame.origin.x = 100
         }
         roundBegin()
         playerValueLabel.text = "\(playerHand)"
@@ -453,15 +453,6 @@ class ViewController: UIViewController
     @IBAction func standTapped(_ sender: UIButton)
     {
         flip()
-        
-        if dealerHand >= 17
-        {
-            checkForWinner()
-        }
-        else if dealerHand < 17
-        {
-            //[dealer continues hitting]
-        }
     }
     
 }
