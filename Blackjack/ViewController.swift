@@ -252,56 +252,60 @@ class ViewController: UIViewController
     {
         var seconds = 0
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             seconds += 1
-        
-            if seconds == 2
+            if self.dealerHand >= 17
             {
-                self.dealerCoverCard.layer.zPosition = 5
-                self.dealerCoverCard.frame.origin.x -= 65
-                self.dealerValueLabel.text = "\(self.dealerHand)"
-                print("dealer hand value updated")
-                
-                self.checkOver17()
-            }
-            else if seconds == 4
-            {
-                self.dealerCard3.layer.zPosition = 6
-                self.dealerCard3.isHidden = false
-                self.dealerValueLabel.text = "\(self.dealerHand)"
-                print("dealer hand value updated")
-                
-                self.checkOver17()
-            }
-            else if seconds == 6
-            {
-                self.dealerCard4.layer.zPosition = 7
-                self.dealerCard4.isHidden = false
-                self.dealerValueLabel.text = "\(self.dealerHand)"
-                print("dealer hand value updated")
-                
-                self.checkOver17()
-            }
-            else if seconds == 8
-            {
+                timer.invalidate()
                 self.checkForWinner()
-                self.dealerValueLabel.text = "\(self.dealerHand)"
-                print("dealer hand value updated")
             }
-            
-        }
-    }
-    
-    func checkOver17()
-    {
-        if dealerHand >= 17
-        {
-            checkForWinner()
-            //stop timer
-        }
-        else
-        {
-            print("continue dealer hit sequence")
+            else
+            {
+                if seconds == 2
+                {
+                    if self.dealerHand < 17
+                    {
+                        self.dealerCoverCard.layer.zPosition = 5
+                        self.dealerCoverCard.frame.origin.x -= 65
+                    }
+                    if self.dealerHand >= 17
+                    {
+                        timer.invalidate()
+                        self.checkForWinner()
+                    }
+                }
+                else if seconds == 4
+                {
+                    if self.dealerHand < 17
+                    {
+                        self.dealerCard3.layer.zPosition = 6
+                        self.dealerCard3.isHidden = false
+                    }
+                    else if self.dealerHand >= 17
+                    {
+                        timer.invalidate()
+                        self.checkForWinner()
+                    }
+                }
+                else if seconds == 6
+                {
+                    if self.dealerHand < 17
+                    {
+                        self.dealerCard4.layer.zPosition = 7
+                        self.dealerCard4.isHidden = false
+                    }
+                    else if self.dealerHand >= 17
+                    {
+                        timer.invalidate()
+                        self.checkForWinner()
+                    }
+                }
+                else
+                {
+                    timer.invalidate()
+                    self.checkForWinner()
+                }
+            }
         }
     }
     
@@ -311,7 +315,7 @@ class ViewController: UIViewController
     {
         if GamesPlayedCount > 0
         {
-        self.dealerCoverCard.frame.origin.x += 65
+        self.dealerCoverCard.frame.origin.x = 100
         }
         roundBegin()
         playerValueLabel.text = "\(playerHand)"
