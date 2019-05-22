@@ -48,8 +48,6 @@ class ViewController: UIViewController
     {
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
         currentBetLabel.text = "$"+"\(currentBet)"
-        playerValueLabel.text = "\(playerHand)"
-        dealerValueLabel.text = "?"
         
         super.viewDidLoad()
     
@@ -166,29 +164,13 @@ class ViewController: UIViewController
         dealerHits()
         dealerValueLabel.text = "\(dealerHand)"
         print("dealer hand value updated")
+        playerValueLabel.text = "\(playerHand)"
     }
     
     //Check For Winner Function
     
     func checkForWinner()
     {
-        for card in playerCards
-        {
-            playerHand += card.value
-        }
-        print("player has \(playerCards.count)")
-        playerValueLabel.text = "\(playerHand)"
-        
-        for card in dealerCards
-        {
-            dealerHand += card.value
-        }
-        print("dealer has \(dealerCards.count)")
-        print(playerHand)
-        print(dealerHand)
-        
-        dealerValueLabel.text = "\(dealerHand)"
-        
         if playerHand > 21
         {
             let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
@@ -273,6 +255,9 @@ class ViewController: UIViewController
     
     func roundBegin()
     {
+        playerValueLabel.text = "\(playerHand)"
+        dealerValueLabel.text = "?"
+        
         //place bet alert
         let newAlert = UIAlertController(title: "Place Your Bet", message: "Use the chips below to select the amount you want to wager on this match", preferredStyle: .alert)
         
@@ -337,14 +322,22 @@ class ViewController: UIViewController
         dealerCard2.image = cards.first?.image
         dealerCards.append(cards.remove(at: 0))
         
-        dealerCard3.image = cards.first?.image
-        dealerCards.append(cards.remove(at: 0))
-        
-        dealerCard4.image = cards.first?.image
-        dealerCards.append(cards.remove(at: 0))
-    
         dealerCoverCard.image = UIImage(named: "gray_back")
-       
+        
+        for card in playerCards
+        {
+            playerHand += card.value
+        }
+        print("player has \(playerCards.count)")
+        playerValueLabel.text = "\(playerHand)"
+        
+        for card in dealerCards
+        {
+            dealerHand += card.value
+        }
+        print("dealer has \(dealerCards.count)")
+        print(playerHand)
+        print(dealerHand)
         }
     
     //Dealer Hits Function
@@ -353,59 +346,65 @@ class ViewController: UIViewController
     {
         var seconds = 0
         
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+       let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             seconds += 1
-            if self.dealerHand >= 17
-            {
-                timer.invalidate()
-                self.checkForWinner()
+            print("Timer Fired")
             }
-            else
+        if self.dealerHand >= 17
+        {
+            timer.invalidate()
+            self.checkForWinner()
+        }
+        else
+        {
+            if seconds == 2
             {
-                if seconds == 2
-                {
-                    if self.dealerHand < 17
-                    {
-                        self.dealerCoverCard.layer.zPosition = 5
-                        self.dealerCoverCard.frame.origin.x -= 65
-                    }
-                    if self.dealerHand >= 17
-                    {
-                        timer.invalidate()
-                        self.checkForWinner()
-                    }
-                }
-                else if seconds == 4
-                {
-                    if self.dealerHand < 17
-                    {
-                        self.dealerCard3.layer.zPosition = 6
-                        self.dealerCard3.isHidden = false
-                    }
-                    else if self.dealerHand >= 17
-                    {
-                        timer.invalidate()
-                        self.checkForWinner()
-                    }
-                }
-                else if seconds == 6
-                {
-                    if self.dealerHand < 17
-                    {
-                        self.dealerCard4.layer.zPosition = 7
-                        self.dealerCard4.isHidden = false
-                    }
-                    else if self.dealerHand >= 17
-                    {
-                        timer.invalidate()
-                        self.checkForWinner()
-                    }
-                }
-                else
+                if self.dealerHand >= 17
                 {
                     timer.invalidate()
                     self.checkForWinner()
                 }
+                else if self.dealerHand < 17
+                {
+                    self.dealerCoverCard.layer.zPosition = 5
+                    self.dealerCoverCard.frame.origin.x -= 65
+                }
+            }
+            else if seconds == 4
+            {
+                if self.dealerHand >= 17
+                {
+                    timer.invalidate()
+                    self.checkForWinner()
+                }
+                else if self.dealerHand < 17
+                {
+                    self.dealerCard3.layer.zPosition = 6
+                    self.dealerCard3.isHidden = false
+                    dealerCard3.image = cards.first?.image
+                    dealerCards.append(cards.remove(at: 0))
+                }
+                
+            }
+            else if seconds == 6
+            {
+                if self.dealerHand >= 17
+                {
+                    timer.invalidate()
+                    self.checkForWinner()
+                }
+                else if self.dealerHand < 17
+                {
+                    self.dealerCard4.layer.zPosition = 7
+                    self.dealerCard4.isHidden = false
+                    dealerCard4.image = cards.first?.image
+                    dealerCards.append(cards.remove(at: 0))
+                }
+            }
+            else if seconds == 8
+            {
+                timer.invalidate()
+                self.checkForWinner()
             }
         }
     }
@@ -430,7 +429,6 @@ class ViewController: UIViewController
     @IBAction func hitTapped(_ sender: UIButton)
     {
       counter = counter + 1
-      playerValueLabel.text = "\(playerHand)"
         
       if counter == 1
         {
@@ -533,16 +531,6 @@ class ViewController: UIViewController
     @IBAction func standTapped(_ sender: UIButton)
     {
         flip()
-        
-        if dealerHand >= 17
-        {
-            checkForWinner()
-        }
-        else if dealerHand < 17
-        {
-            //[dealer continues hitting]
-        }
-        
     }
     
    
