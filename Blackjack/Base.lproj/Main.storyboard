@@ -264,11 +264,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf9-Xi-15Y">
                                 <rect key="frame" x="236" y="560" width="120" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.37350171232876711" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.80392156862745101" blue="0.25490196078431371" alpha="0.52884203767123283" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Place Bet">
-                                    <color key="titleColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="titleColor" red="0.33671972970000003" green="1" blue="0.36163700630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="placeBetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4a-0B-ooZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdd-mz-50r">
                                 <rect key="frame" x="236" y="585" width="120" height="25"/>
@@ -293,6 +296,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="Rdd-mz-50r" id="Mco-8t-MyB"/>
                         <outlet property="currentBetLabel" destination="zjh-bV-oyS" id="t4f-lT-XrK"/>
                         <outlet property="dealerCard1" destination="kBk-xE-aaF" id="LIA-9y-29P"/>
                         <outlet property="dealerCard2" destination="331-kb-jyD" id="dTQ-rE-9ZE"/>
@@ -300,7 +304,9 @@
                         <outlet property="dealerCard4" destination="NLQ-oE-FKD" id="BfQ-Ls-Kxh"/>
                         <outlet property="dealerCoverCard" destination="U8c-Ts-Gxz" id="3sv-FJ-Hxs"/>
                         <outlet property="dealerValueLabel" destination="S3V-zm-gRN" id="qb7-pj-9SE"/>
+                        <outlet property="fiveChip" destination="55b-Bs-o88" id="HEr-no-fIE"/>
                         <outlet property="hitButton" destination="kLV-Y7-Tt7" id="8me-IX-Sf4"/>
+                        <outlet property="oneHundredChip" destination="9Ys-hs-SD5" id="18w-Pl-G9o"/>
                         <outlet property="playerCard1" destination="bYw-ft-uDa" id="8FO-md-6lD"/>
                         <outlet property="playerCard2" destination="EMY-JP-leI" id="cEw-U0-mQH"/>
                         <outlet property="playerCard3" destination="9UU-b1-u3O" id="aMq-gQ-X3d"/>
@@ -308,6 +314,8 @@
                         <outlet property="playerCard5" destination="knb-bI-DB8" id="42h-0a-6kN"/>
                         <outlet property="playerValueLabel" destination="6lq-8w-0LP" id="PJW-WE-agS"/>
                         <outlet property="standButton" destination="x5u-fX-3ch" id="1It-ho-6HI"/>
+                        <outlet property="tenChip" destination="0u9-97-hmD" id="oDr-jH-s9H"/>
+                        <outlet property="twentyFiveChip" destination="HtE-5s-cyV" id="SAX-Tl-N1x"/>
                         <outlet property="yourBankLabel" destination="gvK-3L-zdb" id="WCx-uz-XHX"/>
                     </connections>
                 </viewController>

@@ -27,6 +27,11 @@ class ViewController: UIViewController
     @IBOutlet weak var standButton: UIButton!
     @IBOutlet weak var currentBetLabel: UILabel!
     @IBOutlet weak var yourBankLabel: UILabel!
+    @IBOutlet weak var fiveChip: UIButton!
+    @IBOutlet weak var tenChip: UIButton!
+    @IBOutlet weak var twentyFiveChip: UIButton!
+    @IBOutlet weak var oneHundredChip: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     //Variables:
     var cards: [Card] = [Card]()
@@ -505,6 +510,17 @@ class ViewController: UIViewController
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
         currentBet = 0
         currentBetLabel.text = "$"+"\(currentBet)"
+    }
+    @IBAction func placeBetTapped(_ sender: UIButton)
+    {
+        fiveChip.isUserInteractionEnabled = false
+        tenChip.isUserInteractionEnabled = false
+        twentyFiveChip.isUserInteractionEnabled = false
+        oneHundredChip.isUserInteractionEnabled = false
+        cancelButton.isUserInteractionEnabled = false
+        //add you won "currentBet" by winning this match. alert
+        //credit winnings to bank
+        //reset everything
     }
     
     //Stand Button Tapped
