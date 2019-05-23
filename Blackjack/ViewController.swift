@@ -260,6 +260,18 @@ class ViewController: UIViewController
                 GamesPlayedCount += 1
             }
         }
+        else if dealerHand > 21 && playerHand < 21
+        {
+            let newAlert = UIAlertController(title: "You Win!", message: "Nice job!", preferredStyle: .alert)
+                
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                    newAlert.dismiss(animated: true, completion: nil)
+            })
+                
+            newAlert.addAction(ok)
+                
+            present(newAlert, animated: true, completion: nil)
+        }
     }
     
     //Round Begin Function
