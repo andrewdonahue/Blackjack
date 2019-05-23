@@ -37,8 +37,21 @@ class ViewController: UIViewController
     var cards: [Card] = [Card]()
     var playerCards: [Card] = [Card]()
     var dealerCards: [Card] = [Card]()
-    var playerHand = 0
-    var dealerHand = 0
+    var playerHand = 0 {
+        didSet{
+            print("playerHand updated")
+            playerValueLabel.text = "\(playerHand)"
+        }
+    }
+    var standPressed = false
+    var dealerHand = 0{
+        didSet{
+            if standPressed == true
+            {
+            dealerValueLabel.text = "\(dealerHand)"
+            }
+        }
+    }
     var GamesPlayedCount = 0
     var currentBet = 0
     var bank = 5000
@@ -162,15 +175,13 @@ class ViewController: UIViewController
         hitButton.isUserInteractionEnabled = false
         standButton.isUserInteractionEnabled = false
         dealerHits()
-        dealerValueLabel.text = "\(dealerHand)"
-        print("dealer hand value updated")
-        playerValueLabel.text = "\(playerHand)"
     }
     
     //Check For Winner Function
     
     func checkForWinner()
     {
+        calcValues()
         if playerHand > 21
         {
             let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
@@ -255,6 +266,9 @@ class ViewController: UIViewController
     
     func roundBegin()
     {
+        standPressed = false
+        playerHand = 0
+        dealerHand = 0
         playerValueLabel.text = "\(playerHand)"
         dealerValueLabel.text = "?"
         
@@ -324,6 +338,13 @@ class ViewController: UIViewController
         
         dealerCoverCard.image = UIImage(named: "gray_back")
         
+        calcValues()
+    }
+    
+    func calcValues()
+    {
+        playerHand = 0
+        dealerHand = 0
         for card in playerCards
         {
             playerHand += card.value
@@ -338,7 +359,7 @@ class ViewController: UIViewController
         print("dealer has \(dealerCards.count)")
         print(playerHand)
         print(dealerHand)
-        }
+    }
     
     //Dealer Hits Function
     
@@ -346,17 +367,9 @@ class ViewController: UIViewController
     {
         var seconds = 0
         
-       let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+       Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             seconds += 1
             print("Timer Fired")
-            }
-        if self.dealerHand >= 17
-        {
-            timer.invalidate()
-            self.checkForWinner()
-        }
-        else
-        {
             if seconds == 2
             {
                 if self.dealerHand >= 17
@@ -368,6 +381,7 @@ class ViewController: UIViewController
                 {
                     self.dealerCoverCard.layer.zPosition = 5
                     self.dealerCoverCard.frame.origin.x -= 65
+                    self.calcValues()
                 }
             }
             else if seconds == 4
@@ -381,8 +395,9 @@ class ViewController: UIViewController
                 {
                     self.dealerCard3.layer.zPosition = 6
                     self.dealerCard3.isHidden = false
-                    dealerCard3.image = cards.first?.image
-                    dealerCards.append(cards.remove(at: 0))
+                    self.dealerCard3.image = self.cards.first?.image
+                    self.dealerCards.append(self.cards.remove(at: 0))
+                    self.calcValues()
                 }
                 
             }
@@ -397,8 +412,9 @@ class ViewController: UIViewController
                 {
                     self.dealerCard4.layer.zPosition = 7
                     self.dealerCard4.isHidden = false
-                    dealerCard4.image = cards.first?.image
-                    dealerCards.append(cards.remove(at: 0))
+                    self.dealerCard4.image = self.cards.first?.image
+                    self.dealerCards.append(self.cards.remove(at: 0))
+                    self.calcValues()
                 }
             }
             else if seconds == 8
@@ -407,6 +423,7 @@ class ViewController: UIViewController
                 self.checkForWinner()
             }
         }
+      calcValues()
     }
     
     //Round Start Button Tapped
@@ -415,7 +432,7 @@ class ViewController: UIViewController
     {
         if GamesPlayedCount > 0
         {
-        self.dealerCoverCard.frame.origin.x = 100
+        self.dealerCoverCard.frame.origin.x = 125
         }
         roundBegin()
         playerValueLabel.text = "\(playerHand)"
@@ -474,7 +491,7 @@ class ViewController: UIViewController
             present(newAlert, animated: true, completion: nil)
             playerValueLabel.text = "\(playerHand)"
         }
-        
+        calcValues()
     }
     
     
@@ -530,6 +547,7 @@ class ViewController: UIViewController
     //Stand Button Tapped
     @IBAction func standTapped(_ sender: UIButton)
     {
+        standPressed = true
         flip()
     }
     
