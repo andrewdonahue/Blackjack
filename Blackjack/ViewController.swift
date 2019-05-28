@@ -7,31 +7,38 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController
+class ViewController: UIViewController, WKNavigationDelegate
 {
     //Outlets:
+    
+        //dealercards
     @IBOutlet weak var dealerCard1: UIImageView!
     @IBOutlet weak var dealerCard2: UIImageView!
     @IBOutlet weak var dealerCard3: UIImageView!
     @IBOutlet weak var dealerCard4: UIImageView!
     @IBOutlet weak var dealerCoverCard: UIImageView!
+        //playercards
     @IBOutlet weak var playerCard1: UIImageView!
     @IBOutlet weak var playerCard2: UIImageView!
     @IBOutlet weak var playerCard3: UIImageView!
     @IBOutlet weak var playerCard4: UIImageView!
     @IBOutlet weak var playerCard5: UIImageView!
-    @IBOutlet weak var dealerValueLabel: UILabel!
-    @IBOutlet weak var playerValueLabel: UILabel!
+        //buttons
     @IBOutlet weak var hitButton: UIButton!
     @IBOutlet weak var standButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+        //labels
     @IBOutlet weak var currentBetLabel: UILabel!
     @IBOutlet weak var yourBankLabel: UILabel!
+    @IBOutlet weak var dealerValueLabel: UILabel!
+    @IBOutlet weak var playerValueLabel: UILabel!
+        //chips
     @IBOutlet weak var fiveChip: UIButton!
     @IBOutlet weak var tenChip: UIButton!
     @IBOutlet weak var twentyFiveChip: UIButton!
     @IBOutlet weak var oneHundredChip: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
     
     //Variables:
     var cards: [Card] = [Card]()
@@ -42,10 +49,47 @@ class ViewController: UIViewController
     var GamesPlayedCount = 0
     var currentBet = 0
     var bank = 5000
+    var webView : WKWebView!
+    
+//    override func loadView()
+//    {
+//        self.view = webView
+//    }
     
     override func viewDidLoad()
     
     {
+        //making welcomeAlert
+        
+            let newAlert = UIAlertController(title: "Welcome to Ace Blackjack!", message: "Press the 'Round Start' button to begin", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                newAlert.dismiss(animated: true, completion: nil)
+                
+            })
+            
+            let instructions = UIAlertAction(title: "Instructions", style: .default, handler: {action in
+                // loading URL :
+                let webAddress = "https://stackoverflow.com/users/4600136/mr-javed-multani?tab=profile"
+                let url = NSURL(string: webAddress)
+                let request = NSURLRequest(url: url! as URL)
+                
+                // init and load request in webview.
+                self.webView = WKWebView(frame: self.view.frame)
+                self.webView.navigationDelegate = self
+                webView.loadRequest(request as URLRequest)
+                self.view.addSubview(self.webView)
+                self.view.sendSubviewToBack(self.webView)
+            })
+            
+            newAlert.addAction(ok)
+            
+            newAlert.addAction(instructions)
+            
+            present(newAlert, animated: true, completion: nil)
+        
+        
+        //updating labels
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
         currentBetLabel.text = "$"+"\(currentBet)"
         playerValueLabel.text = "\(playerHand)"
