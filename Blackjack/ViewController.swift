@@ -539,8 +539,6 @@ class ViewController: UIViewController
         calcValues()
     }
     
-    
-    
     //betting
     @IBAction func fiveChipTapped(_ sender: UIButton)
     {
@@ -593,7 +591,6 @@ class ViewController: UIViewController
         flip()
     }
     
-   
     
     
 }
