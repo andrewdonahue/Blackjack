@@ -53,8 +53,16 @@ class ViewController: UIViewController
         }
     }
     var GamesPlayedCount = 0
-    var currentBet = 0
-    var bank = 5000
+    var currentBet = 0{
+        didSet{
+            currentBetLabel.text = "$"+"\(currentBet)"
+        }
+    }
+    var bank = 5000{
+        didSet{
+            yourBankLabel.text = "Your Bank: $"+"\(bank)"
+        }
+    }
     
     override func viewDidLoad()
     
@@ -184,7 +192,7 @@ class ViewController: UIViewController
         calcValues()
         if playerHand > 21
         {
-            let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $\(currentBet)", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
@@ -194,12 +202,24 @@ class ViewController: UIViewController
             
             present(newAlert, animated: true, completion: nil)
             
-            GamesPlayedCount += 1
+        }
+        
+        else if dealerHand == 21 && playerHand != 21
+        {
+            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $\(currentBet)", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                newAlert.dismiss(animated: true, completion:nil)
+            })
+            
+            newAlert.addAction(ok)
+            
+            present(newAlert, animated: true, completion: nil)
         }
             
         else if  playerHand == 21 && dealerHand != 21
         {
-            let newAlert = UIAlertController(title: "You Win!", message: "BlackJack!", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Win!", message: "You won $\(2*currentBet)!", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion: nil)
@@ -209,7 +229,7 @@ class ViewController: UIViewController
             
             present(newAlert, animated: true, completion: nil)
             
-            GamesPlayedCount += 1
+            bank = bank + (2*currentBet)
         }
             
         else if playerHand < 21 && dealerHand < 21
@@ -217,7 +237,7 @@ class ViewController: UIViewController
             
             if playerHand < dealerHand
             {
-                let newAlert = UIAlertController(title: "You Lose!", message: "Better luck next time.", preferredStyle: .alert)
+                let newAlert = UIAlertController(title: "You Lose!", message: "You lost $\(currentBet)", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -247,7 +267,7 @@ class ViewController: UIViewController
                 
             else if playerHand > dealerHand
             {
-                let newAlert = UIAlertController(title: "You Win!", message: "Nice job!", preferredStyle: .alert)
+                let newAlert = UIAlertController(title: "You Win!", message: "You won $\(2*currentBet)!", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -257,12 +277,12 @@ class ViewController: UIViewController
                 
                 present(newAlert, animated: true, completion: nil)
                 
-                GamesPlayedCount += 1
+                bank = bank + (2*currentBet)
             }
         }
         else if dealerHand > 21 && playerHand < 21
         {
-            let newAlert = UIAlertController(title: "You Win!", message: "Nice job!", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Win!", message: "You won $(\(2*currentBet)!", preferredStyle: .alert)
                 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -271,13 +291,24 @@ class ViewController: UIViewController
             newAlert.addAction(ok)
                 
             present(newAlert, animated: true, completion: nil)
+            
+            bank = bank + (2*currentBet)
         }
+        print("bank: \(bank)")
     }
     
     //Round Begin Function
     
     func roundBegin()
     {
+        currentBet = 0
+        
+        fiveChip.isUserInteractionEnabled = true
+        tenChip.isUserInteractionEnabled = true
+        twentyFiveChip.isUserInteractionEnabled = true
+        oneHundredChip.isUserInteractionEnabled = true
+        cancelButton.isUserInteractionEnabled = true
+        
         standPressed = false
         playerHand = 0
         dealerHand = 0
@@ -442,10 +473,7 @@ class ViewController: UIViewController
     
     @IBAction func RSTapped(_ sender: UIButton)
     {
-        if GamesPlayedCount > 0
-        {
         self.dealerCoverCard.frame.origin.x = 125
-        }
         roundBegin()
         playerValueLabel.text = "\(playerHand)"
         print("player hand value updated")
@@ -457,6 +485,11 @@ class ViewController: UIViewController
     
     @IBAction func hitTapped(_ sender: UIButton)
     {
+      fiveChip.isUserInteractionEnabled = false
+      tenChip.isUserInteractionEnabled = false
+      twentyFiveChip.isUserInteractionEnabled = false
+      oneHundredChip.isUserInteractionEnabled = false
+      cancelButton.isUserInteractionEnabled = false
       counter = counter + 1
         
       if counter == 1
@@ -551,9 +584,6 @@ class ViewController: UIViewController
         twentyFiveChip.isUserInteractionEnabled = false
         oneHundredChip.isUserInteractionEnabled = false
         cancelButton.isUserInteractionEnabled = false
-        //add you won "currentBet" by winning this match. alert
-        //credit winnings to bank
-        //reset everything
     }
     
     //Stand Button Tapped
