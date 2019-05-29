@@ -297,7 +297,7 @@ class ViewController: UIViewController
         }
         else if dealerHand > 21 && playerHand < 21
         {
-            let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(2*currentBet)!", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Won!", message: "$(\(potValue) has been added to your bank", preferredStyle: .alert)
                 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -307,7 +307,8 @@ class ViewController: UIViewController
                 
             present(newAlert, animated: true, completion: nil)
             
-            bank = bank + (2*currentBet)
+            bank = bank + (potValue)
+            potValue = 0
         }
         print("bank: \(bank)")
     }
