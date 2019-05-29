@@ -70,6 +70,18 @@
                                     <action selector="standTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TlB-01-fGn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tp9-S8-5NW">
+                                <rect key="frame" x="-2" y="562" width="378" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.17254901959999999" blue="0.098039215690000001" alpha="0.69935252569999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Betting Menu">
+                                    <color key="titleColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="bettingMenuButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NoE-do-V5R"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Hand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-Mh-i09">
                                 <rect key="frame" x="167" y="337" width="177" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHF-Lp-j5D">
-                                <rect key="frame" x="0.0" y="525" width="376" height="93"/>
+                                <rect key="frame" x="0.0" y="525" width="376" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.17254901959999999" blue="0.098039215690000001" alpha="0.69935252569999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -174,6 +186,14 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="footerDividerBar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHL-kS-gio">
                                 <rect key="frame" x="0.0" y="615" width="375" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="footerDividerBar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ0-Q7-mG4">
+                                <rect key="frame" x="-1" y="562" width="379" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -215,40 +235,8 @@
                                 <rect key="frame" x="105" y="183" width="83" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtE-5s-cyV">
-                                <rect key="frame" x="113" y="566" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" " backgroundImage="25Chip"/>
-                                <connections>
-                                    <action selector="twentyFiveChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kae-hD-7Em"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u9-97-hmD">
-                                <rect key="frame" x="62" y="566" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" " backgroundImage="10Chip"/>
-                                <connections>
-                                    <action selector="tenChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mY8-Bf-Zxm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55b-Bs-o88">
-                                <rect key="frame" x="12" y="566" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" " backgroundImage="5Chip"/>
-                                <connections>
-                                    <action selector="fiveChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXv-gm-Bfc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ys-hs-SD5">
-                                <rect key="frame" x="164" y="566" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" " backgroundImage="100Chip"/>
-                                <connections>
-                                    <action selector="oneHundredChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8cz-1Y-dhP"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjh-bV-oyS">
-                                <rect key="frame" x="222" y="525" width="140" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pot Value: $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjh-bV-oyS">
+                                <rect key="frame" x="209" y="525" width="140" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
@@ -261,30 +249,99 @@
                                 <color key="textColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf9-Xi-15Y">
-                                <rect key="frame" x="236" y="560" width="120" height="25"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KK5-iN-tOB">
+                                <rect key="frame" x="0.0" y="218" width="375" height="307"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.15686274509803921" green="0.80392156862745101" blue="0.25490196078431371" alpha="0.52884203767123283" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Place Bet">
-                                    <color key="titleColor" red="0.33671972970000003" green="1" blue="0.36163700630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="placeBetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4a-0B-ooZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdd-mz-50r">
-                                <rect key="frame" x="236" y="585" width="120" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.30594809319999999" blue="0.16889644570000001" alpha="0.50979238013698636" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelBetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brn-Gc-e5F"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55b-Bs-o88">
+                                        <rect key="frame" x="98" y="162" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title=" " backgroundImage="5Chip"/>
+                                        <connections>
+                                            <action selector="fiveChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXv-gm-Bfc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u9-97-hmD">
+                                        <rect key="frame" x="147" y="162" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title=" " backgroundImage="10Chip"/>
+                                        <connections>
+                                            <action selector="tenChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mY8-Bf-Zxm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtE-5s-cyV">
+                                        <rect key="frame" x="197" y="162" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title=" " backgroundImage="25Chip"/>
+                                        <connections>
+                                            <action selector="twentyFiveChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kae-hD-7Em"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ys-hs-SD5">
+                                        <rect key="frame" x="246" y="162" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title=" " backgroundImage="100Chip"/>
+                                        <connections>
+                                            <action selector="oneHundredChipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8cz-1Y-dhP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf9-Xi-15Y">
+                                        <rect key="frame" x="50" y="232" width="138" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274509803921" green="0.80392156862745101" blue="0.25490196078431371" alpha="0.52884203767123283" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Place Bet">
+                                            <color key="titleColor" red="0.33671972970000003" green="1" blue="0.36163700630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="placeBetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4a-0B-ooZ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Bet: $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-TF-8f5">
+                                        <rect key="frame" x="117" y="26" width="140" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dealer's Bet: $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ca-u2-JHN">
+                                        <rect key="frame" x="83" y="71" width="177" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pot Value: $0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-Ch-14y">
+                                        <rect key="frame" x="114" y="114" width="140" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdd-mz-50r">
+                                        <rect key="frame" x="189" y="232" width="138" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.30594809319999999" blue="0.16889644570000001" alpha="0.50979238013698636" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brn-Gc-e5F"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="playerDividerBar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jc6-D1-BvV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.17254901959999999" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <viewLayoutGuide key="safeArea" id="XEh-jD-XHy"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -296,14 +353,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="BMpotValueLabel" destination="DxK-Ch-14y" id="Ovt-CZ-JAC"/>
+                        <outlet property="bettingMenuButton" destination="tp9-S8-5NW" id="omv-SA-vmk"/>
+                        <outlet property="bettingMenuView" destination="KK5-iN-tOB" id="3xS-tw-Lf9"/>
                         <outlet property="cancelButton" destination="Rdd-mz-50r" id="Mco-8t-MyB"/>
-                        <outlet property="currentBetLabel" destination="zjh-bV-oyS" id="t4f-lT-XrK"/>
                         <outlet property="dealerCard1" destination="kBk-xE-aaF" id="LIA-9y-29P"/>
                         <outlet property="dealerCard2" destination="331-kb-jyD" id="dTQ-rE-9ZE"/>
                         <outlet property="dealerCard3" destination="Uxz-Bv-ZhW" id="EQz-87-APj"/>
                         <outlet property="dealerCard4" destination="NLQ-oE-FKD" id="BfQ-Ls-Kxh"/>
                         <outlet property="dealerCoverCard" destination="U8c-Ts-Gxz" id="3sv-FJ-Hxs"/>
                         <outlet property="dealerValueLabel" destination="S3V-zm-gRN" id="qb7-pj-9SE"/>
+                        <outlet property="dealersBetLabel" destination="1Ca-u2-JHN" id="mrM-tE-iht"/>
                         <outlet property="fiveChip" destination="55b-Bs-o88" id="HEr-no-fIE"/>
                         <outlet property="hitButton" destination="kLV-Y7-Tt7" id="8me-IX-Sf4"/>
                         <outlet property="oneHundredChip" destination="9Ys-hs-SD5" id="18w-Pl-G9o"/>
@@ -313,10 +373,12 @@
                         <outlet property="playerCard4" destination="0hY-bc-Ra7" id="7BV-aG-8oP"/>
                         <outlet property="playerCard5" destination="knb-bI-DB8" id="42h-0a-6kN"/>
                         <outlet property="playerValueLabel" destination="6lq-8w-0LP" id="PJW-WE-agS"/>
+                        <outlet property="potValueLabel" destination="zjh-bV-oyS" id="SWe-aH-siC"/>
                         <outlet property="standButton" destination="x5u-fX-3ch" id="1It-ho-6HI"/>
                         <outlet property="tenChip" destination="0u9-97-hmD" id="oDr-jH-s9H"/>
                         <outlet property="twentyFiveChip" destination="HtE-5s-cyV" id="SAX-Tl-N1x"/>
                         <outlet property="yourBankLabel" destination="gvK-3L-zdb" id="WCx-uz-XHX"/>
+                        <outlet property="yourBetLabel" destination="Eod-TF-8f5" id="scL-LL-AZz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

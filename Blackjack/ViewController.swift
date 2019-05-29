@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate
+class ViewController: UIViewController
 {
     //Outlets:
     
@@ -30,7 +29,10 @@ class ViewController: UIViewController, WKNavigationDelegate
     @IBOutlet weak var standButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
         //labels
-    @IBOutlet weak var currentBetLabel: UILabel!
+    @IBOutlet weak var yourBetLabel: UILabel!
+    @IBOutlet weak var dealersBetLabel: UILabel!
+    @IBOutlet weak var BMpotValueLabel: UILabel!
+    @IBOutlet weak var potValueLabel: UILabel!
     @IBOutlet weak var yourBankLabel: UILabel!
     @IBOutlet weak var dealerValueLabel: UILabel!
     @IBOutlet weak var playerValueLabel: UILabel!
@@ -39,6 +41,8 @@ class ViewController: UIViewController, WKNavigationDelegate
     @IBOutlet weak var tenChip: UIButton!
     @IBOutlet weak var twentyFiveChip: UIButton!
     @IBOutlet weak var oneHundredChip: UIButton!
+    @IBOutlet weak var bettingMenuButton: UIButton!
+    @IBOutlet weak var bettingMenuView: UIView!
     
     //Variables:
     var cards: [Card] = [Card]()
@@ -60,57 +64,22 @@ class ViewController: UIViewController, WKNavigationDelegate
         }
     }
     var GamesPlayedCount = 0
-    var currentBet = 0
+    var yourBet = 0
+    var dealersBet = 0
     var bank = 5000
-    var webView : WKWebView!
-    
-//    override func loadView()
-//    {
-//        self.view = webView
-//    }
+    var potValue = 0
     
     override func viewDidLoad()
     
     {
-        //making welcomeAlert
-        
-            let newAlert = UIAlertController(title: "Welcome to Ace Blackjack!", message: "Press the 'Round Start' button to begin", preferredStyle: .alert)
-            
-            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
-                newAlert.dismiss(animated: true, completion: nil)
-                
-            })
-            
-            let instructions = UIAlertAction(title: "Instructions", style: .default, handler: {action in
-                // loading URL :
-                let webAddress = "https://stackoverflow.com/users/4600136/mr-javed-multani?tab=profile"
-                let url = NSURL(string: webAddress)
-                let request = NSURLRequest(url: url! as URL)
-                
-                // init and load request in webview.
-                self.webView = WKWebView(frame: self.view.frame)
-                self.webView.navigationDelegate = self
-                webView.loadRequest(request as URLRequest)
-                self.view.addSubview(self.webView)
-                self.view.sendSubviewToBack(self.webView)
-            })
-            
-            newAlert.addAction(ok)
-            
-            newAlert.addAction(instructions)
-            
-            present(newAlert, animated: true, completion: nil)
-        
-        
         //updating labels
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
         
         super.viewDidLoad()
-    
         
         //Hiding the Hit Cards
-        
         playerCard3.isHidden = true
         playerCard4.isHidden = true
         playerCard5.isHidden = true
@@ -118,12 +87,12 @@ class ViewController: UIViewController, WKNavigationDelegate
         dealerCard2.isHidden = true
         dealerCard3.isHidden = true
         dealerCard4.isHidden = true
+        bettingMenuView.isHidden = true
         
         hitButton.isUserInteractionEnabled = true
         standButton.isUserInteractionEnabled = true
     
         //Cards Array:
-        
         cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52]
         
         roundBegin()
@@ -208,7 +177,6 @@ class ViewController: UIViewController, WKNavigationDelegate
     let card52 = Card(image: UIImage(named: "52-QS")!, v: 10)
 
     //Flip Function
-    
     func flip()
     {
         UIImageView.transition(with: dealerCoverCard,
@@ -222,7 +190,6 @@ class ViewController: UIViewController, WKNavigationDelegate
     }
     
     //Check For Winner Function
-    
     func checkForWinner()
     {
         calcValues()
@@ -319,7 +286,6 @@ class ViewController: UIViewController, WKNavigationDelegate
     }
     
     //Round Begin Function
-    
     func roundBegin()
     {
         standPressed = false
@@ -328,8 +294,8 @@ class ViewController: UIViewController, WKNavigationDelegate
         playerValueLabel.text = "\(playerHand)"
         dealerValueLabel.text = "?"
         
-        //place bet alert
-        let newAlert = UIAlertController(title: "Place Your Bet", message: "Use the chips below to select the amount you want to wager on this match", preferredStyle: .alert)
+        //"Place Bet" alert
+        let newAlert = UIAlertController(title: "Place Your Bet", message: "Press the 'Betting Menu' button and use the chips to place your bet for this hand.", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
             newAlert.dismiss(animated: true, completion: nil)
@@ -377,7 +343,6 @@ class ViewController: UIViewController, WKNavigationDelegate
         playerCard5.isHidden = true
         
     //Shuffle Function
-        
         cards.shuffle()
         
         playerCard1.image = cards.first?.image
@@ -418,7 +383,6 @@ class ViewController: UIViewController, WKNavigationDelegate
     }
     
     //Dealer Hits Function
-    
     func dealerHits()
     {
         var seconds = 0
@@ -483,7 +447,6 @@ class ViewController: UIViewController, WKNavigationDelegate
     }
     
     //Round Start Button Tapped
-    
     @IBAction func RSTapped(_ sender: UIButton)
     {
         if GamesPlayedCount > 0
@@ -496,7 +459,6 @@ class ViewController: UIViewController, WKNavigationDelegate
     }
     
     //Hit Button Tapped
-    
     var counter = 0
     
     @IBAction func hitTapped(_ sender: UIButton)
@@ -535,7 +497,6 @@ class ViewController: UIViewController, WKNavigationDelegate
      else
         {
             //Trigger Alert
-            
             let newAlert = UIAlertController(title: "Error", message: "Maximum number of hits has been reached.", preferredStyle: .alert)
 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
@@ -552,42 +513,87 @@ class ViewController: UIViewController, WKNavigationDelegate
     
     
     
-    //betting
+    //Betting
+    @IBAction func bettingMenuButtonTapped(_ sender: UIButton)
+    {
+        bettingMenuView.isHidden = false
+    }
+    
     @IBAction func fiveChipTapped(_ sender: UIButton)
     {
-        currentBet += 5
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 5
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 5
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 5
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
+    
     @IBAction func tenChipTapped(_ sender: UIButton)
     {
-        currentBet += 10
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 10
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 10
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 10
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
+    
     @IBAction func twentyFiveChipTapped(_ sender: UIButton)
     {
-        currentBet += 25
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 25
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 25
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 25
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
     @IBAction func oneHundredChipTapped(_ sender: UIButton)
     {
-        currentBet += 100
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 100
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 100
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 100
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
     @IBAction func cancelBetTapped(_ sender: UIButton)
     {
-        bank += currentBet
+        bank += yourBet
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
-        currentBet = 0
-        currentBetLabel.text = "$"+"\(currentBet)"
+        
+        yourBet = 0
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet = 0
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = 0
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+
+        bettingMenuView.isHidden = true
     }
+    
     @IBAction func placeBetTapped(_ sender: UIButton)
     {
         fiveChip.isUserInteractionEnabled = false
@@ -595,6 +601,10 @@ class ViewController: UIViewController, WKNavigationDelegate
         twentyFiveChip.isUserInteractionEnabled = false
         oneHundredChip.isUserInteractionEnabled = false
         cancelButton.isUserInteractionEnabled = false
+        bettingMenuView.isHidden = true
+        potValue = dealersBet+yourBet
+
+
         //add you won "currentBet" by winning this match. alert
         //credit winnings to bank
         //reset everything
@@ -606,9 +616,6 @@ class ViewController: UIViewController, WKNavigationDelegate
         standPressed = true
         flip()
     }
-    
-   
-    
     
 }
 
