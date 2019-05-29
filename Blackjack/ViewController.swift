@@ -603,6 +603,14 @@ class ViewController: UIViewController
         
         bank -= 5
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
+        
+        if bank <= 0
+        {
+            fiveChip.isUserInteractionEnabled = false
+            tenChip.isUserInteractionEnabled = false
+            twentyFiveChip.isUserInteractionEnabled = false
+            oneHundredChip.isUserInteractionEnabled = false
+        }
     }
     
     @IBAction func tenChipTapped(_ sender: UIButton)
@@ -618,6 +626,14 @@ class ViewController: UIViewController
         
         bank -= 10
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
+        
+        if bank <= 0
+        {
+            fiveChip.isUserInteractionEnabled = false
+            tenChip.isUserInteractionEnabled = false
+            twentyFiveChip.isUserInteractionEnabled = false
+            oneHundredChip.isUserInteractionEnabled = false
+        }
     }
     
     @IBAction func twentyFiveChipTapped(_ sender: UIButton)
@@ -633,6 +649,14 @@ class ViewController: UIViewController
         
         bank -= 25
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
+        
+        if bank <= 0
+        {
+            fiveChip.isUserInteractionEnabled = false
+            tenChip.isUserInteractionEnabled = false
+            twentyFiveChip.isUserInteractionEnabled = false
+            oneHundredChip.isUserInteractionEnabled = false
+        }
     }
     @IBAction func oneHundredChipTapped(_ sender: UIButton)
     {
@@ -647,6 +671,14 @@ class ViewController: UIViewController
         
         bank -= 100
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
+        
+        if bank <= 0
+        {
+            fiveChip.isUserInteractionEnabled = false
+            tenChip.isUserInteractionEnabled = false
+            twentyFiveChip.isUserInteractionEnabled = false
+            oneHundredChip.isUserInteractionEnabled = false
+        }
     }
     @IBAction func cancelBetTapped(_ sender: UIButton)
     {
@@ -674,11 +706,6 @@ class ViewController: UIViewController
         cancelButton.isUserInteractionEnabled = false
         bettingMenuView.isHidden = true
         potValue = dealersBet+yourBet
-
-
-        //add you won "yourBet" by winning this match. alert
-        //credit winnings to bank
-        //reset everything
     }
     
     //Stand Button Tapped
@@ -689,5 +716,3 @@ class ViewController: UIViewController
     }
     
 }
-
-
