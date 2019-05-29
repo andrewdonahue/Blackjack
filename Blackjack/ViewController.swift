@@ -11,27 +11,38 @@ import UIKit
 class ViewController: UIViewController
 {
     //Outlets:
+    
+        //dealercards
     @IBOutlet weak var dealerCard1: UIImageView!
     @IBOutlet weak var dealerCard2: UIImageView!
     @IBOutlet weak var dealerCard3: UIImageView!
     @IBOutlet weak var dealerCard4: UIImageView!
     @IBOutlet weak var dealerCoverCard: UIImageView!
+        //playercards
     @IBOutlet weak var playerCard1: UIImageView!
     @IBOutlet weak var playerCard2: UIImageView!
     @IBOutlet weak var playerCard3: UIImageView!
     @IBOutlet weak var playerCard4: UIImageView!
     @IBOutlet weak var playerCard5: UIImageView!
-    @IBOutlet weak var dealerValueLabel: UILabel!
-    @IBOutlet weak var playerValueLabel: UILabel!
+        //buttons
     @IBOutlet weak var hitButton: UIButton!
     @IBOutlet weak var standButton: UIButton!
-    @IBOutlet weak var currentBetLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
+        //labels
+    @IBOutlet weak var yourBetLabel: UILabel!
+    @IBOutlet weak var dealersBetLabel: UILabel!
+    @IBOutlet weak var BMpotValueLabel: UILabel!
+    @IBOutlet weak var potValueLabel: UILabel!
     @IBOutlet weak var yourBankLabel: UILabel!
+    @IBOutlet weak var dealerValueLabel: UILabel!
+    @IBOutlet weak var playerValueLabel: UILabel!
+        //chips
     @IBOutlet weak var fiveChip: UIButton!
     @IBOutlet weak var tenChip: UIButton!
     @IBOutlet weak var twentyFiveChip: UIButton!
     @IBOutlet weak var oneHundredChip: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var bettingMenuButton: UIButton!
+    @IBOutlet weak var bettingMenuView: UIView!
     
     //Variables:
     var cards: [Card] = [Card]()
@@ -53,12 +64,18 @@ class ViewController: UIViewController
         }
     }
     var GamesPlayedCount = 0
-    var currentBet = 0{
-        didSet{
-            currentBetLabel.text = "$"+"\(currentBet)"
+    var yourBet = 0
+    var dealersBet = 0
+    var potValue = 0
+    var currentBet = 0
+    {
+        didSet
+        {
+            yourBetLabel.text = "$"+"\(yourBet)"
         }
     }
-    var bank = 5000{
+    var bank = 5000
+    {
         didSet{
             yourBankLabel.text = "Your Bank: $"+"\(bank)"
         }
@@ -67,14 +84,14 @@ class ViewController: UIViewController
     override func viewDidLoad()
     
     {
+        //updating labels
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
         
         super.viewDidLoad()
-    
         
         //Hiding the Hit Cards
-        
         playerCard3.isHidden = true
         playerCard4.isHidden = true
         playerCard5.isHidden = true
@@ -82,12 +99,12 @@ class ViewController: UIViewController
         dealerCard2.isHidden = true
         dealerCard3.isHidden = true
         dealerCard4.isHidden = true
+        bettingMenuView.isHidden = true
         
         hitButton.isUserInteractionEnabled = true
         standButton.isUserInteractionEnabled = true
     
         //Cards Array:
-        
         cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52]
         
         roundBegin()
@@ -172,7 +189,6 @@ class ViewController: UIViewController
     let card52 = Card(image: UIImage(named: "52-QS")!, v: 10)
 
     //Flip Function
-    
     func flip()
     {
         UIImageView.transition(with: dealerCoverCard,
@@ -186,7 +202,6 @@ class ViewController: UIViewController
     }
     
     //Check For Winner Function
-    
     func checkForWinner()
     {
         calcValues()
@@ -298,7 +313,6 @@ class ViewController: UIViewController
     }
     
     //Round Begin Function
-    
     func roundBegin()
     {
         currentBet = 0
@@ -315,8 +329,8 @@ class ViewController: UIViewController
         playerValueLabel.text = "\(playerHand)"
         dealerValueLabel.text = "?"
         
-        //place bet alert
-        let newAlert = UIAlertController(title: "Place Your Bet", message: "Use the chips below to select the amount you want to wager on this match", preferredStyle: .alert)
+        //"Place Bet" alert
+        let newAlert = UIAlertController(title: "Place Your Bet", message: "Press the 'Betting Menu' button and use the chips to place your bet for this hand.", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
             newAlert.dismiss(animated: true, completion: nil)
@@ -364,7 +378,6 @@ class ViewController: UIViewController
         playerCard5.isHidden = true
         
     //Shuffle Function
-        
         cards.shuffle()
         
         playerCard1.image = cards.first?.image
@@ -405,7 +418,6 @@ class ViewController: UIViewController
     }
     
     //Dealer Hits Function
-    
     func dealerHits()
     {
         var seconds = 0
@@ -470,7 +482,6 @@ class ViewController: UIViewController
     }
     
     //Round Start Button Tapped
-    
     @IBAction func RSTapped(_ sender: UIButton)
     {
         self.dealerCoverCard.frame.origin.x = 125
@@ -480,7 +491,6 @@ class ViewController: UIViewController
     }
     
     //Hit Button Tapped
-    
     var counter = 0
     
     @IBAction func hitTapped(_ sender: UIButton)
@@ -524,7 +534,6 @@ class ViewController: UIViewController
      else
         {
             //Trigger Alert
-            
             let newAlert = UIAlertController(title: "Error", message: "Maximum number of hits has been reached.", preferredStyle: .alert)
 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
@@ -539,42 +548,87 @@ class ViewController: UIViewController
         calcValues()
     }
     
-    //betting
+    //Betting
+    @IBAction func bettingMenuButtonTapped(_ sender: UIButton)
+    {
+        bettingMenuView.isHidden = false
+    }
+    
     @IBAction func fiveChipTapped(_ sender: UIButton)
     {
-        currentBet += 5
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 5
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 5
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 5
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
+    
     @IBAction func tenChipTapped(_ sender: UIButton)
     {
-        currentBet += 10
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 10
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 10
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 10
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
+    
     @IBAction func twentyFiveChipTapped(_ sender: UIButton)
     {
-        currentBet += 25
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 25
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 25
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 25
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
     @IBAction func oneHundredChipTapped(_ sender: UIButton)
     {
-        currentBet += 100
-        currentBetLabel.text = "$"+"\(currentBet)"
+        yourBet += 100
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet += 100
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = dealersBet+yourBet
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        
         bank -= 100
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
     }
     @IBAction func cancelBetTapped(_ sender: UIButton)
     {
-        bank += currentBet
+        bank += yourBet
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
-        currentBet = 0
-        currentBetLabel.text = "$"+"\(currentBet)"
+        
+        yourBet = 0
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        dealersBet = 0
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        
+        potValue = 0
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+
+        bettingMenuView.isHidden = true
     }
+    
     @IBAction func placeBetTapped(_ sender: UIButton)
     {
         fiveChip.isUserInteractionEnabled = false
@@ -582,6 +636,13 @@ class ViewController: UIViewController
         twentyFiveChip.isUserInteractionEnabled = false
         oneHundredChip.isUserInteractionEnabled = false
         cancelButton.isUserInteractionEnabled = false
+        bettingMenuView.isHidden = true
+        potValue = dealersBet+yourBet
+
+
+        //add you won "currentBet" by winning this match. alert
+        //credit winnings to bank
+        //reset everything
     }
     
     //Stand Button Tapped
