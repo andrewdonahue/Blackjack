@@ -66,14 +66,16 @@ class ViewController: UIViewController
     var GamesPlayedCount = 0
     var yourBet = 0
     var dealersBet = 0
-    var bank = 5000
     var potValue = 0
-    var currentBet = 0{
-        didSet{
-            currentBetLabel.text = "$"+"\(currentBet)"
+    var currentBet = 0
+    {
+        didSet
+        {
+            yourBetLabel.text = "$"+"\(yourBet)"
         }
     }
-    var bank = 5000{
+    var bank = 5000
+    {
         didSet{
             yourBankLabel.text = "Your Bank: $"+"\(bank)"
         }
