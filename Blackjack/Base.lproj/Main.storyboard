@@ -284,7 +284,7 @@
                                         <color key="backgroundColor" red="0.15686274509803921" green="0.80392156862745101" blue="0.25490196078431371" alpha="0.52884203767123283" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Place Bet">
-                                            <color key="titleColor" red="0.33671972970000003" green="1" blue="0.36163700630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="placeBetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4a-0B-ooZ"/>

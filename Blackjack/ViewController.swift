@@ -51,47 +51,54 @@ class ViewController: UIViewController
     var cards: [Card] = [Card]()
     var playerCards: [Card] = [Card]()
     var dealerCards: [Card] = [Card]()
+    var standPressed = false
+    var GamesPlayedCount = 0
     var playerHand = 0 {
         didSet{
             print("playerHand updated")
             playerValueLabel.text = "\(playerHand)"
         }
     }
-    var standPressed = false
     var dealerHand = 0{
         didSet{
             if standPressed == true
             {
+            print("dealerHand updated")
             dealerValueLabel.text = "\(dealerHand)"
             }
         }
     }
-    var GamesPlayedCount = 0
     var yourBet = 0
-    var dealersBet = 0
-    var potValue = 0
     {
         didSet
         {
+            print("yourBetLabel updated")
             yourBetLabel.text = "$"+"\(yourBet)"
         }
     }
 
-    var dealersBet = 0{
+    var dealersBet = 0
+    {
         didSet
         {
+            print("dealersBetLabel updated")
             dealersBetLabel.text = "$"+"\(dealersBet)"
         }
     }
 
-    var potValue = 0{
-        didSet{
+    var potValue = 0
+    {
+        didSet
+        {
+            print("potValueLabel updated")
             potValueLabel.text = "$\(potValue)"
         }
     }
     var bank = 5000
     {
-        didSet{
+        didSet
+        {
+            print("yourBankLabel updated")
             yourBankLabel.text = "Your Bank: $"+"\(bank)"
         }
     }
@@ -680,8 +687,6 @@ class ViewController: UIViewController
         standPressed = true
         flip()
     }
-    
-    
     
 }
 
