@@ -73,7 +73,7 @@ class ViewController: UIViewController
         didSet
         {
             print("yourBetLabel updated")
-            yourBetLabel.text = "$"+"\(yourBet)"
+            yourBetLabel.text = "Your bet: $"+"\(yourBet)"
         }
     }
 
@@ -82,7 +82,7 @@ class ViewController: UIViewController
         didSet
         {
             print("dealersBetLabel updated")
-            dealersBetLabel.text = "$"+"\(dealersBet)"
+            dealersBetLabel.text = "Dealers bet: $"+"\(dealersBet)"
         }
     }
 
