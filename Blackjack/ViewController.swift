@@ -28,6 +28,7 @@ class ViewController: UIViewController
     @IBOutlet weak var hitButton: UIButton!
     @IBOutlet weak var standButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var placeBetButton: UIButton!
         //labels
     @IBOutlet weak var yourBetLabel: UILabel!
     @IBOutlet weak var dealersBetLabel: UILabel!
@@ -41,8 +42,10 @@ class ViewController: UIViewController
     @IBOutlet weak var tenChip: UIButton!
     @IBOutlet weak var twentyFiveChip: UIButton!
     @IBOutlet weak var oneHundredChip: UIButton!
+        //betting menu
     @IBOutlet weak var bettingMenuButton: UIButton!
     @IBOutlet weak var bettingMenuView: UIView!
+    @IBOutlet weak var bettingMenuBorder: UILabel!
     
     //Variables:
     var cards: [Card] = [Card]()
@@ -67,7 +70,6 @@ class ViewController: UIViewController
     var yourBet = 0
     var dealersBet = 0
     var potValue = 0
-    var currentBet = 0
     {
         didSet
         {
@@ -88,6 +90,19 @@ class ViewController: UIViewController
         potValueLabel.text = "Pot Value: $"+"\(potValue)"
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
         yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        
+        //betting menu z values
+        self.bettingMenuView.layer.zPosition = 100
+        self.placeBetButton.layer.zPosition = 101
+        self.cancelButton.layer.zPosition = 101
+        self.fiveChip.layer.zPosition = 101
+        self.tenChip.layer.zPosition = 101
+        self.twentyFiveChip.layer.zPosition = 101
+        self.oneHundredChip.layer.zPosition = 101
+        self.yourBetLabel.layer.zPosition = 101
+        self.dealersBetLabel.layer.zPosition = 101
+        self.potValueLabel.layer.zPosition = 101
+        self.bettingMenuBorder.layer.zPosition = 101
         
         super.viewDidLoad()
         
