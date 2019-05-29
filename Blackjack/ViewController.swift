@@ -207,7 +207,7 @@ class ViewController: UIViewController
         calcValues()
         if playerHand > 21
         {
-            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $\(currentBet)", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(currentBet)", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
@@ -221,7 +221,7 @@ class ViewController: UIViewController
         
         else if dealerHand == 21 && playerHand != 21
         {
-            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $\(currentBet)", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(currentBet)", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
@@ -234,7 +234,7 @@ class ViewController: UIViewController
             
         else if  playerHand == 21 && dealerHand != 21
         {
-            let newAlert = UIAlertController(title: "You Win!", message: "You won $\(2*currentBet)!", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(2*currentBet)!", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion: nil)
@@ -252,7 +252,7 @@ class ViewController: UIViewController
             
             if playerHand < dealerHand
             {
-                let newAlert = UIAlertController(title: "You Lose!", message: "You lost $\(currentBet)", preferredStyle: .alert)
+                let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(currentBet)", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -282,7 +282,7 @@ class ViewController: UIViewController
                 
             else if playerHand > dealerHand
             {
-                let newAlert = UIAlertController(title: "You Win!", message: "You won $\(2*currentBet)!", preferredStyle: .alert)
+                let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(2*currentBet)!", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -297,7 +297,7 @@ class ViewController: UIViewController
         }
         else if dealerHand > 21 && playerHand < 21
         {
-            let newAlert = UIAlertController(title: "You Win!", message: "You won $(\(2*currentBet)!", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(2*currentBet)!", preferredStyle: .alert)
                 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
