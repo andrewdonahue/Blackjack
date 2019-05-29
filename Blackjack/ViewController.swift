@@ -312,7 +312,7 @@ class ViewController: UIViewController
                 
                 present(newAlert, animated: true, completion: nil)
                 
-                GamesPlayedCount += 1
+                bank = bank + yourBet
             }
                 
             else if playerHand > dealerHand
