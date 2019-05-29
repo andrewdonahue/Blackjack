@@ -91,7 +91,7 @@ class ViewController: UIViewController
         didSet
         {
             print("potValueLabel updated")
-            potValueLabel.text = "$\(potValue)"
+            potValueLabel.text = "Pot value: $\(potValue)"
         }
     }
     var bank = 5000
