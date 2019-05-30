@@ -335,6 +335,21 @@ class ViewController: UIViewController
             bank = bank + potValue
         }
             
+        else if dealerHand == 21 && playerHand == 21
+        {
+            let newAlert = UIAlertController(title: "You Tied!", message: "Your bet has been returned, press 'Round Start' button to play again.", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                newAlert.dismiss(animated: true, completion: nil)
+            })
+            
+            newAlert.addAction(ok)
+            
+            present(newAlert, animated: true, completion: nil)
+            
+            bank = bank + yourBet
+        }
+            
         else if playerHand < 21 && dealerHand < 21
         {
             
