@@ -104,8 +104,9 @@ class ViewController: UIViewController
     }
     
     override func viewDidLoad()
-    
     {
+        //let name = UserDefaults.standard.string(forKey: “name”) ?? “”
+        //bank = UserDefaults.standard.integer(forKey: "bank")
         //updating labels
         potValueLabel.text = "Pot Value: $"+"\(potValue)"
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
@@ -143,6 +144,12 @@ class ViewController: UIViewController
         cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52]
         
         roundBegin()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        UserDefaults.standard.set(bank, forKey: "bank")
     }
     
     //2C, 2D, 2H, 2S
@@ -200,10 +207,10 @@ class ViewController: UIViewController
     let card36 = Card(image: UIImage(named: "36-10S")!, v: 10)
     
     //AC, AD, AH, AS
-    let card37 = Card(image: UIImage(named: "37-AC")!, v: 1 | 11)
-    let card38 = Card(image: UIImage(named: "38-AD")!, v: 1 | 11)
-    let card39 = Card(image: UIImage(named: "39-AH")!, v: 1 | 11)
-    let card40 = Card(image: UIImage(named: "40-AS")!, v: 1 | 11)
+    var card37 = Card(image: UIImage(named: "37-AC")!, v: 11)
+    var card38 = Card(image: UIImage(named: "38-AD")!, v: 11)
+    var card39 = Card(image: UIImage(named: "39-AH")!, v: 11)
+    var card40 = Card(image: UIImage(named: "40-AS")!, v: 11)
    
     //JC, JD, JH, JS
     let card41 = Card(image: UIImage(named: "41-JC")!, v: 10)
@@ -449,6 +456,15 @@ class ViewController: UIViewController
         {
             dealerHand += card.value
         }
+        
+        if playerHand >= 21
+        {
+            card37 = Card(image: UIImage(named: "37-AC")!, v: 1)
+            card38 = Card(image: UIImage(named: "38-AD")!, v: 1)
+            card39 = Card(image: UIImage(named: "39-AH")!, v: 1)
+            card40 = Card(image: UIImage(named: "40-AS")!, v: 1)
+        }
+        
         print("dealer has \(dealerCards.count)")
         print(playerHand)
         print(dealerHand)
