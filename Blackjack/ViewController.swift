@@ -457,13 +457,13 @@ class ViewController: UIViewController
             dealerHand += card.value
         }
         
-        if playerHand >= 21
-        {
-            card37 = Card(image: UIImage(named: "37-AC")!, v: 1)
-            card38 = Card(image: UIImage(named: "38-AD")!, v: 1)
-            card39 = Card(image: UIImage(named: "39-AH")!, v: 1)
-            card40 = Card(image: UIImage(named: "40-AS")!, v: 1)
-        }
+//        if playerHand >= 21
+//        {
+//            card37 = Card(image: UIImage(named: "37-AC")!, v: 1)
+//            card38 = Card(image: UIImage(named: "38-AD")!, v: 1)
+//            card39 = Card(image: UIImage(named: "39-AH")!, v: 1)
+//            card40 = Card(image: UIImage(named: "40-AS")!, v: 1)
+//        }
         
         print("dealer has \(dealerCards.count)")
         print(playerHand)
