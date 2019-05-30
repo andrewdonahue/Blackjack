@@ -9,9 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController
-{
-    //Outlets:
-    
+{    
         //dealercards
     @IBOutlet weak var dealerCard1: UIImageView!
     @IBOutlet weak var dealerCard2: UIImageView!
