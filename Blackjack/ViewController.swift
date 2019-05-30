@@ -345,6 +345,7 @@ class ViewController: UIViewController
             bank = bank + potValue
         }
         print("bank: \(bank)")
+        potValue = 0
     }
     
     //Round Begin Function
