@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController
-{    
+{
         //dealercards
     @IBOutlet weak var dealerCard1: UIImageView!
     @IBOutlet weak var dealerCard2: UIImageView!
@@ -835,5 +835,5 @@ class ViewController: UIViewController
         standPressed = true
         flip()
     }
-    
+     
 }
