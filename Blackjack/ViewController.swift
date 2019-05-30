@@ -106,7 +106,11 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         //let name = UserDefaults.standard.string(forKey: “name”) ?? “”
-        //bank = UserDefaults.standard.integer(forKey: "bank")
+        bank = UserDefaults.standard.integer(forKey: "bank")
+        if bank == 0
+        {
+            bank = 5000
+        }
         //updating labels
         potValueLabel.text = "Pot Value: $"+"\(potValue)"
         yourBankLabel.text = "Your Bank: $"+"\(bank)"
@@ -142,11 +146,19 @@ class ViewController: UIViewController
     
         roundBegin()
         
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        
     }
-    
-    override func viewDidDisappear(_ animated: Bool)
-    {
+    override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.set(bank, forKey: "bank")
+        print("saved \(bank) to bank")
+    }
+    @objc func appMovedToBackground() {
+        print("App moved to background!")
+        UserDefaults.standard.set(bank, forKey: "bank")
+        print("saved \(bank) to bank")
+        
     }
     
     //2C, 2D, 2H, 2S
