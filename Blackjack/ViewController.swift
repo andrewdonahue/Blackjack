@@ -240,9 +240,11 @@ class ViewController: UIViewController
     func checkForWinner()
     {
         calcValues()
+        
         if playerHand > 21
+            //LOSE
         {
-            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(yourBet)", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(yourBet)" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
@@ -252,11 +254,29 @@ class ViewController: UIViewController
             
             present(newAlert, animated: true, completion: nil)
             
+            if bank == 0
+            {
+            //alert
+            let newAlert = UIAlertController(title: "You're Broke!", message: "You have been awarded $1,000 to stay in the game.", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                newAlert.dismiss(animated: true, completion:nil)
+            })
+            
+            newAlert.addAction(ok)
+            
+            present(newAlert, animated: true, completion: nil)
+            
+            //add 1000 chips
+            
+            bank += 1000
+            }
         }
         
         else if dealerHand == 21 && playerHand != 21
+            //LOSE
         {
-            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(yourBet)", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(yourBet)" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
@@ -265,11 +285,30 @@ class ViewController: UIViewController
             newAlert.addAction(ok)
             
             present(newAlert, animated: true, completion: nil)
+            
+            if bank == 0
+            {
+                //alert
+                let newAlert = UIAlertController(title: "You're Broke!", message: "You have been awarded $1,000 to stay in the game.", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                    newAlert.dismiss(animated: true, completion:nil)
+                })
+                
+                newAlert.addAction(ok)
+                
+                present(newAlert, animated: true, completion: nil)
+                
+                //add 1000 chips
+                
+                bank += 1000
+            }
         }
             
         else if  playerHand == 21 && dealerHand != 21
+            //WIN
         {
-            let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(potValue)!", preferredStyle: .alert)
+            let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(potValue)!" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion: nil)
@@ -286,8 +325,9 @@ class ViewController: UIViewController
         {
             
             if playerHand < dealerHand
+                //LOSE
             {
-                let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(yourBet)", preferredStyle: .alert)
+                let newAlert = UIAlertController(title: "You Lose!", message: "You lost $" + "\(yourBet)" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -297,12 +337,29 @@ class ViewController: UIViewController
                 
                 present(newAlert, animated: true, completion: nil)
                 
-                GamesPlayedCount += 1
+                if bank == 0
+                {
+                    //alert
+                    let newAlert = UIAlertController(title: "You're Broke!", message: "You have been awarded $1,000 to stay in the game.", preferredStyle: .alert)
+                    
+                    let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+                        newAlert.dismiss(animated: true, completion:nil)
+                    })
+                    
+                    newAlert.addAction(ok)
+                    
+                    present(newAlert, animated: true, completion: nil)
+                    
+                    //add 1000 chips
+                    
+                    bank += 1000
+                }
             }
                 
             else if playerHand == dealerHand
             {
-                let newAlert = UIAlertController(title: "You Tied!", message: "Better luck next time.", preferredStyle: .alert)
+                //TIE
+                let newAlert = UIAlertController(title: "You Tied!", message: "Your bet has been returned, press 'Round Start' button to play again.", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -317,7 +374,8 @@ class ViewController: UIViewController
                 
             else if playerHand > dealerHand
             {
-                let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(potValue)!", preferredStyle: .alert)
+                //WIN
+                let newAlert = UIAlertController(title: "You Win!", message: "You won $" + "\(potValue)!" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -332,7 +390,8 @@ class ViewController: UIViewController
         }
         else if dealerHand > 21 && playerHand < 21
         {
-            let newAlert = UIAlertController(title: "You Won!", message: "$\(potValue) has been added to your bank", preferredStyle: .alert)
+            //WIN
+            let newAlert = UIAlertController(title: "You Won!", message: "You won $" + "\(potValue)" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
                 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
@@ -538,6 +597,41 @@ class ViewController: UIViewController
       oneHundredChip.isUserInteractionEnabled = false
       cancelButton.isUserInteractionEnabled = false
       counter = counter + 1
+        
+//        CHECK FOR BUST
+//        if playerHand >= 21
+//        {
+//            potValue = 0
+//            potValueLabel.text = "Pot Value: $" + "\(potValue)"
+//
+//            let newAlert = UIAlertController(title: "Bust!", message: "You lost $" + "\(yourBet)" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
+//
+//            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+//                newAlert.dismiss(animated: true, completion:nil)
+//            })
+//
+//            newAlert.addAction(ok)
+//
+//            present(newAlert, animated: true, completion: nil)
+//
+//            if bank == 0
+//            {
+//                //alert
+//                let newAlert = UIAlertController(title: "You're Broke!", message: "You have been awarded $1,000 to stay in the game.", preferredStyle: .alert)
+//
+//                let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
+//                    newAlert.dismiss(animated: true, completion:nil)
+//                })
+//
+//                newAlert.addAction(ok)
+//
+//                present(newAlert, animated: true, completion: nil)
+//
+//                //add 1000 chips
+//
+//                bank += 1000
+//            }
+//        }
         
       if counter == 1
         {
