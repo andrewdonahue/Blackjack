@@ -27,7 +27,9 @@ class ViewController: UIViewController
     @IBOutlet weak var standButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var placeBetButton: UIButton!
-        //labels
+    @IBOutlet weak var allInButton: UIButton!
+    @IBOutlet weak var RSButton: UIButton!
+    //labels
     @IBOutlet weak var yourBetLabel: UILabel!
     @IBOutlet weak var dealersBetLabel: UILabel!
     @IBOutlet weak var BMpotValueLabel: UILabel!
@@ -262,6 +264,8 @@ class ViewController: UIViewController
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
+                self.RSButton.isUserInteractionEnabled = true
+
             })
             
             newAlert.addAction(ok)
@@ -275,6 +279,8 @@ class ViewController: UIViewController
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
+                self.RSButton.isUserInteractionEnabled = true
+
             })
             
             newAlert.addAction(ok)
@@ -287,6 +293,9 @@ class ViewController: UIViewController
             }
         }
         
+            //if hand value is <= 10, ace = 11
+            //else ace = 1
+            
         else if dealerHand == 21 && playerHand != 21
             //LOSE
         {
@@ -294,6 +303,8 @@ class ViewController: UIViewController
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion:nil)
+                self.RSButton.isUserInteractionEnabled = true
+
             })
             
             newAlert.addAction(ok)
@@ -307,6 +318,8 @@ class ViewController: UIViewController
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion:nil)
+                    self.RSButton.isUserInteractionEnabled = true
+
                 })
                 
                 newAlert.addAction(ok)
@@ -326,6 +339,8 @@ class ViewController: UIViewController
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion: nil)
+                self.RSButton.isUserInteractionEnabled = true
+
             })
             
             newAlert.addAction(ok)
@@ -341,6 +356,8 @@ class ViewController: UIViewController
             
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                 newAlert.dismiss(animated: true, completion: nil)
+                self.RSButton.isUserInteractionEnabled = true
+
             })
             
             newAlert.addAction(ok)
@@ -360,6 +377,8 @@ class ViewController: UIViewController
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
+                    self.RSButton.isUserInteractionEnabled = true
+
                 })
                 
                 newAlert.addAction(ok)
@@ -373,6 +392,8 @@ class ViewController: UIViewController
                     
                     let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                         newAlert.dismiss(animated: true, completion:nil)
+                        self.RSButton.isUserInteractionEnabled = true
+
                     })
                     
                     newAlert.addAction(ok)
@@ -392,6 +413,8 @@ class ViewController: UIViewController
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
+                    self.RSButton.isUserInteractionEnabled = true
+
                 })
                 
                 newAlert.addAction(ok)
@@ -408,6 +431,8 @@ class ViewController: UIViewController
                 
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
+                    self.RSButton.isUserInteractionEnabled = true
+
                 })
                 
                 newAlert.addAction(ok)
@@ -424,6 +449,8 @@ class ViewController: UIViewController
                 
             let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
                     newAlert.dismiss(animated: true, completion: nil)
+                self.RSButton.isUserInteractionEnabled = true
+
             })
                 
             newAlert.addAction(ok)
@@ -462,6 +489,7 @@ class ViewController: UIViewController
         
         let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
             newAlert.dismiss(animated: true, completion: nil)
+            self.RSButton.isUserInteractionEnabled = false
         })
         
         newAlert.addAction(ok)
@@ -843,6 +871,17 @@ class ViewController: UIViewController
         bettingMenuView.isHidden = true
         potValue = dealersBet+yourBet
     }
+    @IBAction func allInTapped(_ sender: UIButton)
+    {
+        yourBet = yourBet + bank
+        bank = 0
+        potValue = yourBet + dealersBet
+        yourBetLabel.text = "Your Bet: $"+"\(yourBet)"
+        dealersBetLabel.text = "Dealer's Bet: $"+"\(dealersBet)"
+        potValueLabel.text = "Pot Value: $"+"\(potValue)"
+        bettingMenuView.isHidden = true
+    }
+    
     
     //Stand Button Tapped
     @IBAction func standTapped(_ sender: UIButton)

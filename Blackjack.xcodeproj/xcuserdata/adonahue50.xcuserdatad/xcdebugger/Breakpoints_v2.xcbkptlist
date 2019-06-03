@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blackjack/ViewController.swift"
-            timestampString = "580932385.998279"
+            timestampString = "581274901.8001651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "checkForWinner()"
             landmarkType = "7">
          </BreakpointContent>
