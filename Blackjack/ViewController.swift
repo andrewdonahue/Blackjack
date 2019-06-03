@@ -90,6 +90,7 @@ class ViewController: UIViewController
         {
             print("potValueLabel updated")
             potValueLabel.text = "Pot value: $\(potValue)"
+            BMpotValueLabel.text = "Pot value: $\(potValue)"
         }
     }
     var bank = 5000
@@ -638,41 +639,6 @@ class ViewController: UIViewController
       oneHundredChip.isUserInteractionEnabled = false
       cancelButton.isUserInteractionEnabled = false
       counter = counter + 1
-        
-//        CHECK FOR BUST
-//        if playerHand >= 21
-//        {
-//            potValue = 0
-//            potValueLabel.text = "Pot Value: $" + "\(potValue)"
-//
-//            let newAlert = UIAlertController(title: "Bust!", message: "You lost $" + "\(yourBet)" + ", press 'Round Start' button to play again.", preferredStyle: .alert)
-//
-//            let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
-//                newAlert.dismiss(animated: true, completion:nil)
-//            })
-//
-//            newAlert.addAction(ok)
-//
-//            present(newAlert, animated: true, completion: nil)
-//
-//            if bank == 0
-//            {
-//                //alert
-//                let newAlert = UIAlertController(title: "You're Broke!", message: "You have been awarded $1,000 to stay in the game.", preferredStyle: .alert)
-//
-//                let ok = UIAlertAction(title: "Ok", style: .default, handler: {action in
-//                    newAlert.dismiss(animated: true, completion:nil)
-//                })
-//
-//                newAlert.addAction(ok)
-//
-//                present(newAlert, animated: true, completion: nil)
-//
-//                //add 1000 chips
-//
-//                bank += 1000
-//            }
-//        }
         
       if counter == 1
         {
